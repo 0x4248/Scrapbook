@@ -26,7 +26,7 @@ init:
 	mkdir -p $(OUT)
 
 compile:
-	$(GFORT) -o $(OUT)/$(BIN) file.f90d
+	$(GFORT) -o $(OUT)/$(BIN) file.f90
 
 clean:
 	rm -rf $(OUT)
