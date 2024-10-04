@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0
-# x86bootdisk
+# Scraps
 #
-# Makefile
+# .gitignore
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2024 0x4248 and contributors
@@ -16,25 +16,18 @@
 # along with this program. If you have not please see the following link:
 # https://www.gnu.org/licenses/gpl-3.0.html
 
-NASM = nasm
-BOOTDISK = src/boot.asm
-OUT = build
-BIN = boot.bin
+.DS_Store
+*.o
+*.a
+a.out
+*.out
+*.dat
+*.log
 
-all: init compile
-
-init:
-	mkdir -p $(OUT)
-
-compile:
-	$(NASM) -f bin $(BOOTDISK) -o $(OUT)/$(BIN) 
-
-clean:
-	rm -rf $(OUT)
-	rm -rf $(OUT)/$(BIN)
-
-
-test: all
-	qemu-system-i386 -fda $(OUT)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
-
-.PHONY: all clean
+**/build/
+**/dist/
+**/test/
+**/tests/
+**/tmp/
+**/temp/
+**/AppData/

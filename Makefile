@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: GPL-3.0
-# x86bootdisk
+# Scraps
 #
-# Makefile
+# Main Makefile
+#
+# This is really for bulk compiling and testing of each scrap.
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2024 0x4248 and contributors
@@ -16,25 +18,26 @@
 # along with this program. If you have not please see the following link:
 # https://www.gnu.org/licenses/gpl-3.0.html
 
-NASM = nasm
-BOOTDISK = src/boot.asm
-OUT = build
-BIN = boot.bin
+include scraps.mk
 
-all: init compile
-
-init:
-	mkdir -p $(OUT)
-
-compile:
-	$(NASM) -f bin $(BOOTDISK) -o $(OUT)/$(BIN) 
+all: 
+	@python3 tools/scrapbuild.py all $(MK-S)
 
 clean:
-	rm -rf $(OUT)
-	rm -rf $(OUT)/$(BIN)
+	@python3 tools/scrapbuild.py clean $(MK-S)
 
+git-ref:
+	@git rev-parse HEAD
 
-test: all
-	qemu-system-i386 -fda $(OUT)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
+git-last:
+	@git log -1 --pretty=%B%N%an%N%ae%N%at
 
-.PHONY: all clean
+help:
+	@echo "Scrapbuild usage:"
+	@echo "make all - Compile all scraps"
+	@echo "make clean - Clean all scraps"
+	@echo "make help - Show this help message"
+	@echo "--GIT--"
+	@echo "make git-ref - Get the git reference"
+	@echo "make git-last - Get the last commit message"
+	@echo "make git-ref git-last - Get both the git reference and last commit message"

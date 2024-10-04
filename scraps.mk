@@ -1,8 +1,12 @@
 # SPDX-License-Identifier: GPL-3.0
-# x86bootdisk
+# Scraps
 #
-# Makefile
+# scraps.mk
 #
+# Each scrap has its own Makefile. This file is used to include all the scraps
+# so the main Makefile can compile and test each scrap. (If you want to really
+# test them all)
+# 
 # COPYRIGHT NOTICE
 # Copyright (C) 2024 0x4248 and contributors
 # This file and software is licenced under the GNU General Public License v3.0. 
@@ -16,25 +20,5 @@
 # along with this program. If you have not please see the following link:
 # https://www.gnu.org/licenses/gpl-3.0.html
 
-NASM = nasm
-BOOTDISK = src/boot.asm
-OUT = build
-BIN = boot.bin
-
-all: init compile
-
-init:
-	mkdir -p $(OUT)
-
-compile:
-	$(NASM) -f bin $(BOOTDISK) -o $(OUT)/$(BIN) 
-
-clean:
-	rm -rf $(OUT)
-	rm -rf $(OUT)/$(BIN)
-
-
-test: all
-	qemu-system-i386 -fda $(OUT)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
-
-.PHONY: all clean
+MK-S += x86bootdisk/Makefile
+MK-S += fortran/filetest/Makefile

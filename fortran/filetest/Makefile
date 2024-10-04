@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0
-# x86bootdisk
+# Fortran file test
 #
 # Makefile
 #
@@ -16,10 +16,9 @@
 # along with this program. If you have not please see the following link:
 # https://www.gnu.org/licenses/gpl-3.0.html
 
-NASM = nasm
-BOOTDISK = src/boot.asm
+GFORT = gfortran
 OUT = build
-BIN = boot.bin
+BIN = filetest
 
 all: init compile
 
@@ -27,14 +26,13 @@ init:
 	mkdir -p $(OUT)
 
 compile:
-	$(NASM) -f bin $(BOOTDISK) -o $(OUT)/$(BIN) 
+	$(GFORT) -o $(OUT)/$(BIN) file.f90d
 
 clean:
 	rm -rf $(OUT)
 	rm -rf $(OUT)/$(BIN)
 
-
 test: all
-	qemu-system-i386 -fda $(OUT)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
+	$(OUT)/$(BIN)
 
 .PHONY: all clean
