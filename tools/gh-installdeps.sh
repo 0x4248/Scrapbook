@@ -19,7 +19,7 @@
 # along with this program. If you have not please see the following link:
 # https://www.gnu.org/licenses/gpl-3.0.html
 
-apt install -y \
+sudo apt install -y \
     build-essential \
     cmake \
     gfortran \
