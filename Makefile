@@ -20,11 +20,17 @@
 
 include scraps.mk
 
+# Commands
+PYTHON = python3
+
+# Folders
+TOOLS = tools
+
 all: 
-	@python3 tools/scrapbuild.py all $(MK-S)
+	@$(PYTHON) $(TOOLS)/scrapbuild.py all $(MK-S)
 
 clean:
-	@python3 tools/scrapbuild.py clean $(MK-S)
+	@$(PYTHON) $(TOOLS)/scrapbuild.py clean $(MK-S)
 
 git-ref:
 	@git rev-parse HEAD
