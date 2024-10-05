@@ -5,36 +5,29 @@
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2024 0x4248 and contributors
-# This file and software is licenced under the GNU General Public License v3.0. 
-# Redistribution of this file and software is permitted under the terms of the 
-# GNU General Public License v3.0. 
-#
-# NO WARRANTY IS PROVIDED WITH THIS SOFTWARE. I AM NOT RELIABLE FOR ANY DAMAGES.
-# THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY AND LIABILITY OF ANY KIND.
-#
-# You should have received a copy of the GNU General Public License v3.0
-# along with this program. If you have not please see the following link:
-# https://www.gnu.org/licenses/gpl-3.0.html
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the license is not changed.
+# 
+# This software is free and open source. Licensed under the GNU general
+# public license version 3.0 as published by the Free Software Foundation.
+include ../globals.mk
 
-NASM = nasm
 BOOTDISK = src/boot.asm
-OUT = build
 BIN = boot.bin
 
 all: init compile
 
 init:
-	mkdir -p $(OUT)
+	$(S)mkdir -p $(BUILD)
 
 compile:
-	$(NASM) -f bin $(BOOTDISK) -o $(OUT)/$(BIN) 
+	$(S)$(NASM) -f bin $(BOOTDISK) -o $(BUILD)/$(BIN) 
 
 clean:
-	rm -rf $(OUT)
-	rm -rf $(OUT)/$(BIN)
-
+	$(S)rm -rf $(BUILD)
+	$(S)rm -rf $(BUILD)/$(BIN)
 
 test: all
-	qemu-system-i386 -fda $(OUT)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
+	$(S)qemu-system-i386 -fda $(BUILD)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
 
 .PHONY: all clean

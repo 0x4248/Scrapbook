@@ -6,42 +6,27 @@
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2024 0x4248 and contributors
-# This file and software is licenced under the GNU General Public License v3.0. 
-# Redistribution of this file and software is permitted under the terms of the 
-# GNU General Public License v3.0. 
-#
-# NO WARRANTY IS PROVIDED WITH THIS SOFTWARE. I AM NOT RELIABLE FOR ANY DAMAGES.
-# THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY AND LIABILITY OF ANY KIND.
-#
-# You should have received a copy of the GNU General Public License v3.0
-# along with this program. If you have not please see the following link:
-# https://www.gnu.org/licenses/gpl-3.0.html
-
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the license is not changed.
+# 
+# This software is free and open source. Licensed under the GNU general
+# public license version 3.0 as published by the Free Software Foundation.
 
 # Imports we need
 import sys
 import subprocess
 import os
+import shutil
 
-
-# Just some ANSI escape codes for colors
 RESET = "\033[0m"
 GREEN = "\033[32m"
 RED = "\033[31m"
 BLUE = "\033[34m"
 
-def main():
-	print(f"{BLUE}STARTING SCRAPBUILD{RESET}")
-	# First we need to check if the caller has given the correct arguments
-	# TYPE - This should contain the type of build we are doing. Either "clean" 
-	# or "all". "clean" should tell all the sub-makefiles to clean up and "all"
-	# should tell all the sub-makefiles to build.
-	# MAKEFILES - This should contain the list of makefiles we are going to run.
-	# For example ABC/Makefile, XYZ/Makefile etc.
-
+def set_globals():
 	TYPE = sys.argv[1]
 	MAKEFILES = sys.argv[2:]
-	
+
 	# Prechecks
 	if MAKEFILES == []:
 		print("No makefiles specified.")
@@ -57,29 +42,66 @@ def main():
 		print(f"{BLUE}Cleaning makefiles.{RESET}")
 	elif TYPE == "all":
 		print(f"{BLUE}Building makefiles.{RESET}")
-	
-	# Current counts the current index of the makefile we are building
+	return TYPE, MAKEFILES, ROOT
+
+def print_status(current, makefile, maketype, MAKEFILES, TYPE):
+	percent = current/len(MAKEFILES)*100
+	percent = int(round(percent, 0))
+	spaces = 3-len(str(percent))
+	space_chars = " "*spaces
+	if maketype == "make":
+		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on makefile {makefile}{RESET}")
+	elif maketype == "cmake":
+		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on cmake {makefile}{RESET}")
+
+def main():
+	print(f"{BLUE}STARTING SCRAPBUILD{RESET}")
+
+	TYPE, MAKEFILES, ROOT = set_globals()
+
 	current = 0
 	for makefile in MAKEFILES:
-		# First we need to change the directory to the directory of the makefile
-		# so that when the makefile calls a relative path, it will work.
-		os.chdir(os.path.dirname(makefile))
+		maketype = "make"
 
-		# Now we can run the makefile
-		print(f"[{GREEN}{current/len(MAKEFILES)*100}%{RESET}] {GREEN}{makefile}{RESET}")
+		if makefile.startswith("!"):
+			maketype = "cmake"
+			makefile = makefile[1:]
+
+		if maketype == "make":
+			os.chdir(os.path.dirname(makefile))
+		elif maketype == "cmake":
+			os.chdir(makefile)
+
+		print_status(current, makefile, maketype, MAKEFILES, TYPE)
 		current += 1
 
 		# Try to run the makefile and if it fails stop
 		try:
 			if TYPE == "clean":
-				subprocess.run(["make", "clean"], check=True)
+				if maketype == "make":
+					subprocess.run(["make", "clean"], check=True)
+				elif maketype == "cmake":
+					subprocess.run(["mkdir", "-p", "build"], check=True)
+					os.chdir("build")
+					subprocess.run(["cmake", ".."], check=True)
+					subprocess.run(["make", "clean"], check=True)
+					os.chdir("..")
+					shutil.rmtree("build")
 			elif TYPE == "all":
-				subprocess.run(["make", "all"], check=True)
+				if maketype == "make":
+					subprocess.run(["make", "all"], check=True)
+				elif maketype == "cmake":
+					if os.path.isdir("build"):
+						shutil.rmtree("build")
+					subprocess.run(["mkdir", "-p", "build"], check=True)
+					os.chdir("build")
+					subprocess.run(["cmake", ".."], check=True)
+					subprocess.run(["make", "all"], check=True)
+
 		except subprocess.CalledProcessError:
 			print(f"{RED}!!!! Fail to build {makefile} !!!!{RESET}")
 			sys.exit(1)
 
-		# Change back to the root directory
 		os.chdir(ROOT)
 
 

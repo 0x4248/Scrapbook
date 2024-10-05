@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0
-# x86bootdisk
+# writing_raw
 #
-# .gitignore
+# CMakeLists.txt
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2024 0x4248 and contributors
@@ -10,4 +10,11 @@
 # 
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
-build/
+cmake_minimum_required(VERSION 3.0)
+
+project(writing_raw)
+
+include_directories(include)
+# add file
+add_executable(basic basic.c write.c)
+# add_executable(hello_world hello_world.c)
