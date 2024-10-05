@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-3.0
  * writing_raw
  *
- * basic.c
+ * write.c
  *
  * COPYRIGHT NOTICE
  * Copyright (C) 2024 0x4248 and contributors
