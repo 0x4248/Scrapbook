@@ -15,6 +15,5 @@ cmake_minimum_required(VERSION 3.0)
 project(writing_raw)
 
 include_directories(include)
-# add file
 add_executable(basic basic.c write.c)
-# add_executable(hello_world hello_world.c)
+add_executable(hello hello.c write.c)
