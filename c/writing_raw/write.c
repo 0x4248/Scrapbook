@@ -17,6 +17,13 @@
 
 #include "write.h"
 
+/**
+ * Write data - Writes raw chars to a file.
+ * 
+ * @param data - The data to write.
+ * @param filename - The filename to write to.
+ * @param buffer_size - The size of the buffer.
+ */
 int write_data(const uint8_t data[], 
 				const char *filename, 
 				const int buffer_size) {
