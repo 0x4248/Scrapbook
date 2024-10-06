@@ -26,7 +26,7 @@ start:
     jmp bios_print       ; jump to bios_print
     hlt                  ; halt the system
 
-boot_msg db 'Booted!', 0
+
 
 bios_print:
     lodsb                ; load byte from si to al
@@ -41,6 +41,7 @@ bios_print:
 done:
     ret
 
+boot_msg db 'Booted!', 0
 
 times 510-($-$$) db 0   ; Fill the rest of the sector with 0
 db 0x55                 ; Boot signature
