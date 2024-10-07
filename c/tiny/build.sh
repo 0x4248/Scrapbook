@@ -26,3 +26,7 @@ gcc -S tiny.c -o build/tiny.s
 echo "[ BUILD.SH ] Building hello"
 gcc hello.c -o build/hello
 gcc -S hello.c -o build/hello.s
+
+echo "[ BUILD.SH ] Building math"
+gcc math.c -o build/math
+gcc -S math.c -o build/math.s
