@@ -10,7 +10,7 @@
 # 
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 project(writing_raw)
 
