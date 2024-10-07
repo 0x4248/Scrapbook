@@ -53,6 +53,8 @@ def print_status(current, makefile, maketype, MAKEFILES, TYPE):
 		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on makefile {makefile}{RESET}")
 	elif maketype == "cmake":
 		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on cmake {makefile}{RESET}")
+	elif maketype == "bash":
+		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on bash {makefile}{RESET}")
 
 def main():
 	print(f"{BLUE}STARTING SCRAPBUILD{RESET}")
@@ -66,11 +68,18 @@ def main():
 		if makefile.startswith("!"):
 			maketype = "cmake"
 			makefile = makefile[1:]
+		
+		if makefile.startswith("@"):
+			maketype = "bash"
+			makefile = makefile[1:]
 
 		if maketype == "make":
 			os.chdir(os.path.dirname(makefile))
 		elif maketype == "cmake":
 			os.chdir(makefile)
+		elif maketype == "bash":
+			makefile = os.path.join(ROOT, makefile)
+			os.chdir(os.path.dirname(makefile))
 
 		print_status(current, makefile, maketype, MAKEFILES, TYPE)
 		current += 1
@@ -87,6 +96,8 @@ def main():
 					subprocess.run(["make", "clean"], check=True)
 					os.chdir("..")
 					shutil.rmtree("build")
+				elif maketype == "bash":
+					subprocess.run(["bash", makefile, "clean"], check=True)
 			elif TYPE == "all":
 				if maketype == "make":
 					subprocess.run(["make", "all"], check=True)
@@ -97,7 +108,8 @@ def main():
 					os.chdir("build")
 					subprocess.run(["cmake", ".."], check=True)
 					subprocess.run(["make", "all"], check=True)
-
+				elif maketype == "bash":
+					subprocess.run(["bash", makefile, "all"], check=True)
 		except subprocess.CalledProcessError:
 			print(f"{RED}!!!! Fail to build {makefile} !!!!{RESET}")
 			sys.exit(1)
