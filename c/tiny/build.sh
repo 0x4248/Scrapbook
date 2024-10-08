@@ -20,13 +20,13 @@ fi
 mkdir -p build
 
 echo "[ BUILD.SH ] Building tiny"
-gcc tiny.c -o build/tiny
-gcc -S tiny.c -o build/tiny.s
+x86_64-elf-gcc tiny.c -o build/tiny
+x86_64-elf-gcc -S tiny.c -o build/tiny.s
 
 echo "[ BUILD.SH ] Building hello"
-gcc hello.c -o build/hello
-gcc -S hello.c -o build/hello.s
+x86_64-elf-gcc hello.c -o build/hello
+x86_64-elf-gcc -S hello.c -o build/hello.s
 
 echo "[ BUILD.SH ] Building math"
-gcc math.c -o build/math
-gcc -S math.c -o build/math.s
+x86_64-elf-gcc math.c -o build/math
+x86_64-elf-gcc -S math.c -o build/math.s
