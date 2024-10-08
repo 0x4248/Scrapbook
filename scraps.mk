@@ -24,4 +24,5 @@
 MK-S += x86bootdisk/Makefile
 MK-S += fortran/filetest/Makefile
 MK-S += !c/writing_raw
+MK-S += !c/http_server
 MK-S += @c/tiny/build.sh
