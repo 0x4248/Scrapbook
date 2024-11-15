@@ -21,8 +21,10 @@
 # 
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
+
 MK-S += x86bootdisk/Makefile
 MK-S += fortran/filetest/Makefile
 MK-S += !c/writing_raw
 MK-S += !c/http_server
 MK-S += @c/tiny/build.sh
+MK-S += !c/factorial
