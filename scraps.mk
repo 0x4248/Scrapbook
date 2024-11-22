@@ -28,3 +28,4 @@ MK-S += !c/writing_raw
 MK-S += !c/http_server
 MK-S += @c/tiny/build.sh
 MK-S += !c/factorial
+MK-S += !c/XORenc
