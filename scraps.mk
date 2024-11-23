@@ -29,3 +29,4 @@ MK-S += !c/http_server
 MK-S += @c/tiny/build.sh
 MK-S += !c/factorial
 MK-S += !c/XORenc
+MK-S += !c/weird_loops
