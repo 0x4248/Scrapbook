@@ -50,11 +50,11 @@ def print_status(current, makefile, maketype, MAKEFILES, TYPE):
 	spaces = 3-len(str(percent))
 	space_chars = " "*spaces
 	if maketype == "make":
-		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on makefile {makefile}{RESET}")
+		print(f"[{space_chars}{percent}%]{BLUE} Running {TYPE} on makefile {makefile}{RESET}")
 	elif maketype == "cmake":
-		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on cmake {makefile}{RESET}")
+		print(f"[{space_chars}{percent}%]{BLUE} Running {TYPE} on cmake {makefile}{RESET}")
 	elif maketype == "bash":
-		print(f"[{space_chars}{percent}%]{GREEN} Running {TYPE} on bash {makefile}{RESET}")
+		print(f"[{space_chars}{percent}%]{BLUE} Running {TYPE} on bash {makefile}{RESET}")
 
 def main():
 	print(f"{BLUE}STARTING SCRAPBUILD{RESET}")
