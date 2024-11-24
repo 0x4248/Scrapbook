@@ -28,8 +28,14 @@ char *encode(char *str, int *key){
 }
 
 int main(){
-	char str[] = "Hello, World!";
-	int key[] = {7, 4, 5, 3};
+	char str[100];
+	int key[100];
+
+	//input
+	printf("Enter a string: ");
+	scanf("%s", str);
+	printf("Enter a key: ");
+	scanf("%d", key);
 	
 
 	/* Encrypt */
