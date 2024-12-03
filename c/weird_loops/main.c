@@ -4,7 +4,7 @@
  * main.c
  *
  * Looping in a weird way
- *
+ * 
  * COPYRIGHT NOTICE
  * Copyright (C) 2024 0x4248 and contributors
  * Redistribution and use in source and binary forms, with or without
@@ -17,12 +17,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int jumps()
-{
+int jumps(){
 	int i = 0;
-loop:
-	if (i < 10)
-	{
+loop: 
+	if (i < 10) {
 		printf("i = %d\n", i);
 		i++;
 		goto loop;
@@ -30,39 +28,32 @@ loop:
 	return 0;
 }
 
-int while_loop()
-{
+int while_loop() {
 	int i = 0;
-	while (i < 10)
-	{
+	while (i < 10) {
 		printf("i = %d\n", i);
 		i++;
 	}
 	return 0;
 }
 
-int normal_loop()
-{
-	for (int i = 0; i < 10; i++)
-	{
+int normal_loop() {
+	for (int i = 0; i < 10; i++) {
 		printf("i = %d\n", i);
 	}
 	return 0;
 }
 
-int do_while_loop()
-{
+int do_while_loop() {
 	int i = 0;
-	do
-	{
+	do {
 		printf("i = %d\n", i);
 		i++;
 	} while (i < 10);
 	return 0;
 }
 
-int main()
-{
+int main() {
 
 	printf("Normal loop\n");
 	normal_loop();
