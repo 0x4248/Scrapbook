@@ -26,9 +26,16 @@ program main
 	
 	! Write hello world to a file
 	print *, 'Writing file...'
+
+	! open (unit, file, status)
     open(1, file='test.txt', status='unknown')
+
+	! write (unit, format) list
     write(1, *) 'Hello, world!'
+
+	! close (unit)
     close(1)
+
 	print *, 'File written!'
 
 end program main
