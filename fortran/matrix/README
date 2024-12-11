@@ -2,3 +2,12 @@ Fortran Matrix
 =================
 
 Basic matrix operations in Fortran.
+
+Operations
+----------
+
+- Initialization
+- Addition
+- Subtraction
+- Multiplication
+- Division
