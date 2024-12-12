@@ -10,7 +10,7 @@
 #
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
-include ../globals.mk
+include ../../globals.mk
 
 BOOTDISK = src/boot.asm
 BIN = boot.bin
