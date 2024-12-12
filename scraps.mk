@@ -24,6 +24,7 @@
 
 MK-S += asm/x86bootdisk/Makefile
 MK-S += fortran/filetest/Makefile
+MK-S += fortran/matrix/Makefile
 MK-S += !c/writing_raw
 MK-S += !c/http_server
 MK-S += @c/tiny/build.sh
