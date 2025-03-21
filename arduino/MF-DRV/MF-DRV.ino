@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: GPL-3.0
  * MF-DRV
- * Work in progress driver for the MF Sensor Series 
+ * Work in progress driver for the MF Sensor Series
  *
  * COPYRIGHT NOTICE
  * Copyright (C) 2024 0x4248 and contributors
@@ -17,13 +17,15 @@
 int a0Value = 0;
 int d0Value = 0;
 
-void setup() {	
+void setup()
+{
 	pinMode(D0_PIN, INPUT);
 	pinMode(A0_PIN, INPUT);
 	Serial.begin(9600);
 }
 
-void loop() {
+void loop()
+{
 	// Im still figuring out what each of the pins do.
 	a0Value = analogRead(A0_PIN);
 	d0Value = analogRead(D0_PIN);
