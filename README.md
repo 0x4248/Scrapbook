@@ -4,7 +4,7 @@ Random code examples, experiments, and other stuff that don't belong to a full r
 
 ## Repo structure 
 
-Each folder contains a different "scrap" with its own `README.md` file and the code itself. Most of them also have a `Makefile` to run the code.
+Each folder contains a different "scrap" with its own `README.md` (sometimes just `README` or with another extension) file and the code itself. Most of them also have a `Makefile` to run the code.
 
 ## License
 
