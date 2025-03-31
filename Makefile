@@ -17,9 +17,6 @@ include scraps.mk
 # Commands
 PYTHON = python3
 
-# Folders
-TOOLS = tools
-
 all: 
 	@$(PYTHON) $(TOOLS)/scrapbuild.py all $(MK-S)
 
