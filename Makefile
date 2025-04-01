@@ -31,6 +31,7 @@ git-last:
 
 help:
 	@echo "Scrapbuild usage:"
+	@echo "--GENERAL--"
 	@echo "make all - Compile all scraps"
 	@echo "make clean - Clean all scraps"
 	@echo "make help - Show this help message"
