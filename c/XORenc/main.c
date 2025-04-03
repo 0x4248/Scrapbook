@@ -34,7 +34,7 @@ int main()
 	char str[100];
 	int key[100];
 
-	// input
+	/* input */
 	printf("Enter a string: ");	
 	scanf("%s", str);
 	printf("Enter a key: ");
