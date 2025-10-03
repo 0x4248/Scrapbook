@@ -1,10 +1,10 @@
-# Scraps
+# Scrapbook
 
-Random code examples, experiments, and other stuff that don't belong to a full repository.
+Welcome to my scrapbook, this is my collection of experements, code, fragments, scripts and some other little projects. Here you can find me tinkering around with some random hardware and software. For other files like binaries and files that dont fit here check the [JunkDrawer](https://github.com/0x4248/JunkDrawer).
 
 ## Repo structure 
 
-Each folder contains a different "scrap" with its own `README.md` (sometimes just `README` or with another extension) file and the code itself. Most of them also have a `Makefile` to run the code.
+Each folder contains a different "scrap" with its own `README.md` (sometimes just `README` or with another extension) file and the code itself. Think of it like an image in the **scrapbook** with some postit notes.
 
 ## License
 
