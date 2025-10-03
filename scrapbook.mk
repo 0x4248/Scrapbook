@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scraps
+# Scrapbook
 #
-# scraps.mk
+# Scrapbook.mk
 #
-# Each scrap has its own Makefile. This file is used to include all the scraps
+# Each scrap has its own Makefile. This file is used to include all the Scrapbook
 # so the main Makefile can compile and test each scrap. (If you want to really
 # test them all)
 # 

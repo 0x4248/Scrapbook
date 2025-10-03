@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scraps
+# Scrapbook
 #
 # Main Makefile
 #
@@ -12,7 +12,7 @@
 #
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
-include scraps.mk
+include Scrapbook.mk
 
 # Commands
 PYTHON = python3
@@ -32,8 +32,8 @@ git-last:
 help:
 	@echo "Scrapbuild usage:"
 	@echo "--GENERAL--"
-	@echo "make all - Compile all scraps"
-	@echo "make clean - Clean all scraps"
+	@echo "make all - Compile all Scrapbook"
+	@echo "make clean - Clean all Scrapbook"
 	@echo "make help - Show this help message"
 	@echo "--GIT--"
 	@echo "make git-ref - Get the git reference"
