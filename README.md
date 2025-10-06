@@ -2,7 +2,9 @@
 
 Welcome to my scrapbook, this is my collection of experements, code, fragments, scripts and some other little projects. Here you can find me tinkering around with some random hardware and software. For other files like binaries and files that dont fit here check the [JunkDrawer](https://github.com/0x4248/JunkDrawer).
 
-![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=0x4248&langs_count=20&exclude_repo=linux,busybox,0x4248.github.io,notebook&layout=compact&theme=dark)
+![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=0x4248&langs_count=50&exclude_repo=linux,busybox,0x4248.github.io,notebook&layout=compact&theme=dark)
+
+*That count is there since gh wont show more than 5 languages on the stats*
 
 ## Repo structure 
 
