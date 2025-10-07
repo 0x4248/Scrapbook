@@ -14,4 +14,13 @@
 
 #include<stdbool.h>
 
+/**
+ * Ok so I know many people say this is not one bit its really 8 bits in 
+ * memory and I KNOW OK! This isn't designed to be efficient at all TwT, im sorry
+ * C god's, please spare me...
+ * 
+ * You cant really do "one" bit in C unless im dumb (most likely) and not
+ * implementing it here. Anyways, this **one** line is used in 99% of the code
+ * in this project, crazy!
+ */
 typedef bool bit;
