@@ -25,6 +25,7 @@ program matrix
     implicit none
     
     ! Declare variables
+		! C = result
     integer, parameter :: n = 3
     real :: a(n, n), b(n, n), c(n, n)
     integer :: i, j
@@ -54,7 +55,6 @@ program matrix
 
 
     ! Perform matrix operations
-
     ! Addition
     c = a + b
 
