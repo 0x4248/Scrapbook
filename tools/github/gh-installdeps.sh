@@ -13,6 +13,7 @@
 #
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
+sudo apt update
 sudo apt install -y \
     build-essential \
     cmake \
