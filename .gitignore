@@ -26,3 +26,5 @@ a.out
 **/tmp/
 **/temp/
 **/AppData/
+
+!/tools/build
