@@ -10,21 +10,83 @@
 #
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
-.DS_Store
-*.o
-*.a
-a.out
-*.out
-*.dat
-*.log
-*.bin
 
-**/build/
-**/dist/
-**/test/
-**/tests/
-**/tmp/
-**/temp/
-**/AppData/
 
-!/tools/build
+
+# Im thinking for now lets do a linux kernel way of doing this. Whitelists!
+#
+#.DS_Store
+#a.out
+
+#*.o
+#*.a
+#*.out
+#*.dat
+#*.log
+#*.bin
+#*.class
+
+#**/build/
+#**/dist/
+#**/test/
+#**/tests/
+#**/tmp/
+#**/temp/
+#**/AppData/
+#**/ApplicationSupport/
+#**/caches/
+#**/Caches/
+#**/Containers/
+
+
+
+#!/tools/build
+
+*.*
+
+# Lets not ignore these important dotfiles
+!.gitignore
+!.junkref
+!.init
+!.project
+!.config
+!.defconfig
+
+# TEXT
+
+!*.txt
+!*.md
+!*.tex
+
+!README
+
+### SOURCE FILLES ###
+# C
+!*.c
+!*.h
+
+# C++
+!*.cpp
+!*.c++
+!*.hpp
+!*.h++
+
+# ARDUINO
+!*.ino
+
+# JAVA
+!*.java
+
+# FORTRAN
+!*.f90
+
+# ASM
+!*.s
+!*.S
+!*.asm
+
+### SCRIPTS ###
+!*.py
+!*.sh
+!*.bash
+!*.fish
