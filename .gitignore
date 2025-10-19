@@ -13,34 +13,8 @@
 
 
 
-# Im thinking for now lets do a better way of doing this. Whitelists!
-#
-#.DS_Store
-#a.out
-
-#*.o
-#*.a
-#*.out
-#*.dat
-#*.log
-#*.bin
-#*.class
-
-#**/build/
-#**/dist/
-#**/test/
-#**/tests/
-#**/tmp/
-#**/temp/
-#**/AppData/
-#**/ApplicationSupport/
-#**/caches/
-#**/Caches/
-#**/Containers/
-
-
-
-#!/tools/build
+# Ok so whats going on here, seems pretty crazy, I know. Well I thought that 
+# using whitelists would be much easier to manage.
 
 *.*
 
