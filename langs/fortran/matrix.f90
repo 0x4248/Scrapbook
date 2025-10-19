@@ -12,18 +12,11 @@
 !
 ! Redistribution and use in source and binary forms, with or without
 ! modification, are permitted provided that the license is not changed.
-! 
-! This program is distributed in the hope that it will be useful,
-! but WITHOUT ANY WARRANTY; without even the implied warranty of
-! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-! GNU General Public License for more details.
-!
-! You should have received a copy of the GNU General Public License
-! along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 
 program matrix
     implicit none
-    
+
     ! Declare variables
 		! C = result
     integer, parameter :: n = 3
@@ -84,7 +77,7 @@ program matrix
     end do
 
     print *, ''
-    
+
     ! Division
     c = a / b
 
