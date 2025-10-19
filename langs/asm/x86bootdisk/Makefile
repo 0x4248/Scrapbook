@@ -21,13 +21,13 @@ init:
 	$(S)mkdir -p $(BUILD)
 
 compile:
-	$(S)$(NASM) -f bin $(BOOTDISK) -o $(BUILD)/$(BIN) 
+	$(S)$(NASM) -f bin $(BOOTDISK) -o $(BUILD)/$(BIN)
 
 clean:
 	$(S)rm -rf $(BUILD)
 	$(S)rm -rf $(BUILD)/$(BIN)
 
 test: all
-	$(S)qemu-system-i386 -fda $(BUILD)/$(BIN) --bios /Users/lewis/Documents/Code/seabios/out/bios.bin
+	$(S)qemu-system-i386 -fda $(BUILD)/$(BIN)
 
 .PHONY: all clean
