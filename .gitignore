@@ -13,7 +13,7 @@
 
 
 
-# Ok so whats going on here, seems pretty crazy, I know. Well I thought that 
+# Ok so whats going on here, seems pretty crazy, I know. Well I thought that
 # using whitelists would be much easier to manage.
 
 *.*
@@ -26,9 +26,11 @@
 !.config
 !.defconfig
 
-
+##### SORT THIS ####
 !*.mk
 !*.conf
+!*.ld
+##### SORT THIS ####
 
 # TEXT
 
