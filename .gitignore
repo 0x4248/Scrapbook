@@ -26,6 +26,12 @@
 !.config
 !.defconfig
 
+# Dirs
+build/
+bin/
+appdata/
+AppData/
+
 ##### SORT THIS ####
 !*.mk
 !*.conf
