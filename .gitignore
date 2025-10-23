@@ -31,6 +31,7 @@ build/
 bin/
 appdata/
 AppData/
+__pycache__/
 
 ##### SORT THIS ####
 !*.mk
