@@ -37,6 +37,7 @@ __pycache__/
 !*.mk
 !*.conf
 !*.ld
+!*.glsl
 ##### SORT THIS ####
 
 # TEXT
