@@ -1,6 +1,7 @@
 import sounddevice as sd
 import sys
 import time
+
 GREEN = "\033[92m"
 RESET = "\033[0m"
 
