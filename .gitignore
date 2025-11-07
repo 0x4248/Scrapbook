@@ -38,8 +38,8 @@ __pycache__/
 !*.conf
 !*.ld
 !*.glsl
-!.html
-!.css
+!*.html
+!*.css
 ##### SORT THIS ####
 
 # TEXT
