@@ -32,6 +32,7 @@ bin/
 appdata/
 AppData/
 __pycache__/
+pages/
 
 ##### SORT THIS ####
 !*.mk
@@ -41,6 +42,8 @@ __pycache__/
 !*.html
 !*.css
 !*.ref
+!.github/
+!*.yml
 ##### SORT THIS ####
 
 # TEXT
