@@ -3,7 +3,11 @@ import html
 import os
 import shutil
 
-import markdown
+try:
+    import markdown
+except ImportError:
+    os.system("pip3 install markdown")
+
 from markdown.core import Markdown
 
 ROOT = os.getcwd()
@@ -228,7 +232,6 @@ def main():
     if os.path.exists(OUT_DIR):
         shutil.rmtree(OUT_DIR)
     ensure_dir(OUT_DIR)
-    os.system("pip3 install markdown")
     shutil.copy("doc/ScrapExplorer/welcome.txt", "pages/README.txt")
 
     for dirpath, dirs, files in os.walk(SRC_DIR):
