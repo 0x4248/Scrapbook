@@ -7,6 +7,7 @@ try:
     import markdown
 except ImportError:
     os.system("pip3 install markdown")
+    import markdown
 
 from markdown.core import Markdown
 
