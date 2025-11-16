@@ -21,8 +21,8 @@ TEMPLATE = """<!doctype html>
 <html>
     <head>
         <title>{title}</title>
-        <link rel="stylesheet" href="/misc/www/css/basic_mono.css"/>
-        <link rel="stylesheet" href="/misc/www/css/ScrapExplorer/main.css"/>
+        <link rel="stylesheet" href="/Scrapbook/misc/www/css/basic_mono.css"/>
+        <link rel="stylesheet" href="/Scrapbook/misc/www/css/ScrapExplorer/main.css"/>
 
         <style>
         .ln {{
