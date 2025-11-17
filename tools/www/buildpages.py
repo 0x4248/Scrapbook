@@ -121,7 +121,28 @@ def make_file_page(src_path, out_path_rel):
     github_url = f"https://github.com/{repo}/blob/main/{repo_path}"
     github_raw = f"https://raw.githubusercontent.com/{repo}/main/{repo_path}"
 
-    if is_binary(src_path):
+    ext = os.path.splitext(filename)[1].lower()
+
+    if ext in [".md", ".markdown", ".html", ".htm"]:
+        with open(src_path, "r", encoding="utf-8", errors="replace") as f:
+            raw = f.read()
+
+        if ext in [".md", ".markdown"]:
+            rendered = markdown.markdown(raw)
+        else:
+            rendered = raw
+
+        stats = f"Rendered HTML view | Size: {filesize} bytes\n"
+        toolbar = (
+            f'<a href="{filename}" download>[Download file]</a> '
+            f'<a href="{github_url}">[Show on GitHub]</a> '
+            f'<a href="{github_raw}">[Raw]</a> '
+        )
+
+        # IMPORTANT: no line numbers, and no escaping
+        content = f"<div class='rendered-html'>{rendered}</div>"
+
+    elif is_binary(src_path):
         stats = f"Size: {filesize} bytes\n"
         toolbar = (
             f'<a href="{filename}" download>[Download file]</a> '
@@ -132,6 +153,7 @@ def make_file_page(src_path, out_path_rel):
             "<p style='text-align:center;'>Binary file cannot be displayed.</p>\n"
             f'<a style="text-align:center;display:block;" href="{filename}" download>[Download]</a>\n'
         )
+
     else:
         with open(src_path, "r", encoding="utf-8", errors="replace") as f:
             text = f.read()
