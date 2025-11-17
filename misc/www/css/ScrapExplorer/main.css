@@ -36,6 +36,7 @@
     --text-alt-colour-darker: var(--purple);
     --dot-bg: var(--bg-dark);
     --dot-color: var(--bg-light);
+    --color-hr: var(--blue);
     --dot-size: 4px;
     --dot-space: 22px;
 }
