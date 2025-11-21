@@ -16,6 +16,7 @@ SRC_DIR = ROOT
 OUT_DIR = os.path.join(ROOT, "pages")
 
 IGNORE_DIRS = [".git", "build", "data", "tmp", "bin", "__pycache__", "pages"]
+LOGS_DIR = os.path.join(OUT_DIR, "logs")
 
 TEMPLATE = """<!doctype html>
 <html>
@@ -73,6 +74,16 @@ def ensure_dir(path):
 def write_file(path, content):
     ensure_dir(os.path.dirname(path))
     with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
+def run_cmd(cmd):
+    return os.popen(cmd).read().strip()
+
+
+def write_log(name, content):
+    ensure_dir(LOGS_DIR)
+    with open(os.path.join(LOGS_DIR, name), "w", encoding="utf-8") as f:
         f.write(content)
 
 
@@ -249,6 +260,41 @@ def run_prebuild_commands():
     print("Prebuild complete.\n")
 
 
+def generate_logs():
+    print("Generating logs...")
+
+    ensure_dir(LOGS_DIR)
+
+    gitlog = run_cmd("git log --stat --decorate --color=never")
+    write_log("gitlog.txt", gitlog)
+
+    gitlog_short = run_cmd("git log --oneline --decorate --color=never")
+    write_log("gitlog_short.txt", gitlog_short)
+
+    gitstats = run_cmd("git shortlog -sn --all --no-merges")
+    write_log("gitstats.txt", gitstats)
+
+    branch = run_cmd("git rev-parse --abbrev-ref HEAD")
+    write_log("branch.txt", branch + "\n")
+
+    last_commit = run_cmd("git log -1 --pretty=fuller --color=never")
+    write_log("last_commit.txt", last_commit)
+
+    submodules = run_cmd("git submodule status --recursive")
+    write_log("submodules.txt", submodules)
+
+    tree = run_cmd("git ls-tree -r --name-only HEAD")
+    write_log("gittree.txt", tree)
+
+    tree = run_cmd("git ls-tree -l -r HEAD")
+    write_log("gittreelong.txt", tree)
+
+    tree = run_cmd("tree")
+    write_log("tree.txt", tree)
+
+    print("Logs generated.\n")
+
+
 def copy_repo_to_pages():
     print("Copying repository to /pages...")
 
@@ -307,6 +353,7 @@ def main():
 
     run_prebuild_commands()
     copy_repo_to_pages()
+    generate_logs()
     generate_all_pages()
 
 
