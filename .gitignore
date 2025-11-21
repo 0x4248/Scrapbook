@@ -20,6 +20,7 @@
 
 # Lets not ignore these important dotfiles
 !.gitignore
+!.gitmodules
 !.junkref
 !.init
 !.project
@@ -33,6 +34,8 @@ appdata/
 AppData/
 __pycache__/
 pages/
+__cmake_systeminformation/
+ext/
 
 ##### SORT THIS ####
 !*.mk
