@@ -59,7 +59,7 @@ TEMPLATE = """<!doctype html>
 <div class="separator">[{endtag}]</div>
 (C) 2025 0x4248
 (C) 2025 4248 Media and 4248 Systems, All part of 0x4248
-See LICENCE files for more information
+See LICENCE files for more information. Not all files are by 0x4248 always check Licencing.
         </pre>
     </body>
 </html>
@@ -116,7 +116,6 @@ def make_file_page(src_path, out_path_rel):
     filesize = os.path.getsize(src_path)
 
     repo = "0x4248/Scrapbook"
-
     repo_path = out_path_rel.replace(".html", "")
     github_url = f"https://github.com/{repo}/blob/main/{repo_path}"
     github_raw = f"https://raw.githubusercontent.com/{repo}/main/{repo_path}"
@@ -138,8 +137,6 @@ def make_file_page(src_path, out_path_rel):
             f'<a href="{github_url}">[Show on GitHub]</a> '
             f'<a href="{github_raw}">[Raw]</a> '
         )
-
-        # IMPORTANT: no line numbers, and no escaping
         content = f"<div class='rendered-html'>{rendered}</div>"
 
     elif is_binary(src_path):
@@ -245,37 +242,72 @@ def make_directory_index(dir_path, rel_path):
     write_file(os.path.join(OUT_DIR, rel_path, "index.html"), page)
 
 
-def copy_raw_file(src_path, rel_path):
-    dest = os.path.join(OUT_DIR, rel_path)
-    ensure_dir(os.path.dirname(dest))
-    shutil.copy2(src_path, dest)
+def run_prebuild_commands():
+    print("Running prebuild commands...")
+    os.system("git submodule init")
+    os.system("git submodule update --recursive --remote")
+    print("Prebuild complete.\n")
+
+
+def copy_repo_to_pages():
+    print("Copying repository to /pages...")
+
+    for dirpath, dirs, files in os.walk(SRC_DIR):
+        if dirpath.startswith(OUT_DIR):
+            continue
+
+        dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
+
+        rel = os.path.relpath(dirpath, SRC_DIR)
+        if rel == ".":
+            rel = ""
+
+        for file in files:
+            if file.startswith(".") or file == "buildpages.py":
+                continue
+
+            src_file = os.path.join(dirpath, file)
+            dst_file = os.path.join(OUT_DIR, rel, file)
+
+            ensure_dir(os.path.dirname(dst_file))
+            shutil.copy2(src_file, dst_file)
+
+    print("Copy complete.\n")
+
+
+def generate_all_pages():
+    print("Generating index and file pages...")
+
+    for dirpath, dirs, files in os.walk(OUT_DIR):
+        rel = os.path.relpath(dirpath, OUT_DIR)
+        if rel == ".":
+            rel = ""
+
+        # Directory index
+        make_directory_index(dirpath, rel)
+
+        # File pages
+        for file in files:
+            if file.startswith("."):
+                continue
+
+            src_path = os.path.join(dirpath, file)
+            out_rel = os.path.join(rel, file) + ".html"
+            make_file_page(src_path, out_rel)
+
+    print("HTML generation complete.\n")
 
 
 def main():
     if os.path.exists(OUT_DIR):
         shutil.rmtree(OUT_DIR)
     ensure_dir(OUT_DIR)
+
     shutil.copy("doc/ScrapExplorer/welcome.txt", "pages/README.txt")
 
-    for dirpath, dirs, files in os.walk(SRC_DIR):
-        if dirpath.startswith(OUT_DIR):
-            continue
-
-        rel = os.path.relpath(dirpath, SRC_DIR)
-        if rel == ".":
-            rel = ""
-
-        make_directory_index(dirpath, rel)
-
-        for file in files:
-            if file.startswith(".") or "buildpages.py" in file:
-                continue
-
-            src_file = os.path.join(dirpath, file)
-            rel_file = os.path.join(rel, file)
-
-            copy_raw_file(src_file, rel_file)
-            make_file_page(src_file, rel_file + ".html")
+    run_prebuild_commands()
+    copy_repo_to_pages()
+    generate_all_pages()
 
 
 if __name__ == "__main__":
