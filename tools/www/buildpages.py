@@ -30,7 +30,6 @@ TEMPLATE = """<!doctype html>
             display: inline-block;
             opacity: 0.5;
             margin-right: 10px;
-            color: #888;
             text-align: right;
             width: 3em;
             user-select: none;
