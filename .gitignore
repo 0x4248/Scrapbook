@@ -35,7 +35,7 @@ AppData/
 __pycache__/
 pages/
 __cmake_systeminformation/
-ext/
+
 
 ##### SORT THIS ####
 !*.mk
