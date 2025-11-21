@@ -96,7 +96,7 @@ def compute_breadcrumbs(rel_path):
     accum = ""
     for p in parts:
         accum = os.path.join(accum, p)
-        crumbs.append(f'<a href="/{accum}/index.html">{p}</a>')
+        crumbs.append(f'<a href="/Scrapbook/{accum}/index.html">{p}</a>')
 
     return " / ".join(crumbs)
 
