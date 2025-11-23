@@ -129,7 +129,8 @@ def make_file_page(src_path, out_path_rel):
     repo_path = out_path_rel.replace(".html", "")
     github_url = f"https://github.com/{repo}/blob/main/{repo_path}"
     github_raw = f"https://raw.githubusercontent.com/{repo}/main/{repo_path}"
-
+    github_proxy_raw = f"https://proxy.0x4248.dev/https://raw.githubusercontent.com/{repo}/main/{repo_path}"
+    github_search = f"https://github.com/search?q=repo%3A0x4248%2FScrapbook++path%3A**%2F{filename}&type=code"
     ext = os.path.splitext(filename)[1].lower()
 
     if ext in [".md", ".markdown", ".html", ".htm"]:
@@ -143,18 +144,22 @@ def make_file_page(src_path, out_path_rel):
 
         stats = f"Rendered HTML view | Size: {filesize} bytes\n"
         toolbar = (
-            f'<a href="{filename}" download>[Download file]</a> '
+            f'<a href="{filename}" download>[Download]</a> '
             f'<a href="{github_url}">[Show on GitHub]</a> '
+            f'<a href="{github_search}">[Search similar files]</a> '
             f'<a href="{github_raw}">[Raw]</a> '
+            f'<a href="{github_proxy_raw}">[Raw (proxy)]</a> '
         )
         content = f"<div class='rendered-html'>{rendered}</div>"
 
     elif is_binary(src_path):
         stats = f"Size: {filesize} bytes\n"
         toolbar = (
-            f'<a href="{filename}" download>[Download file]</a> '
+            f'<a href="{filename}" download>[Download]</a> '
             f'<a href="{github_url}">[Show on GitHub]</a> '
+            f'<a href="{github_search}">[Search similar files]</a> '
             f'<a href="{github_raw}">[Raw]</a> '
+            f'<a href="{github_proxy_raw}">[Raw (proxy)]</a> '
         )
         content = (
             "<p style='text-align:center;'>Binary file cannot be displayed.</p>\n"
@@ -174,10 +179,11 @@ def make_file_page(src_path, out_path_rel):
 
         stats = f"Lines: {text.count('\\n') + 1} | Size: {filesize} bytes\n"
         toolbar = (
-            f'<a href="{filename}" download>[Download file]</a> '
-            f'<a href="#" onclick="toggleLineNumbers();return false;">[Toggle line #]</a> '
+            f'<a href="{filename}" download>[Download]</a> '
             f'<a href="{github_url}">[Show on GitHub]</a> '
+            f'<a href="{github_search}">[Search similar files]</a> '
             f'<a href="{github_raw}">[Raw]</a> '
+            f'<a href="{github_proxy_raw}">[Raw (proxy)]</a> '
         )
         content = numbered
 
