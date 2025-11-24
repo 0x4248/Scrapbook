@@ -268,22 +268,32 @@ C: GPL 2.0 Only
 D: Versatile Commodore Emulator
 W: http://vice-emu.sourceforge.net/
 
+L: Commodore 64 / 128 / Amiga
+N: Commodore International
+C: Closed source
+D: 8-Bit and 16-Bit computers
+
 L: ARM Architecture
 N: ARM Ltd.
-C: Various proprietary and open licenses
-D: ARM CPU architecture used in embedded and mobile systems
+C: Various licenses
 W: https://www.arm.com/
 
 L: Raspberry Pi 4 & 5
 N: Raspberry Pi Foundation
-C: Various open-source licenses and proprietary components
-D: Single-board computers used for education and experimentation
+C: Various licenses
+D: Single-board computers
+W: https://www.raspberrypi.com/
+
+L: Raspberry Pi Pico
+N: Raspberry Pi Foundation
+C: Various licenses
+D: Micro-controller
 W: https://www.raspberrypi.com/
 
 L: Intel
 N: Intel Corporation
 C: Various licenses
-D: CPU and chipset technologies used in testing and development
+D: CPU and chipset technologies
 W: https://www.intel.com/
 
 L: Qualcomm Atheros (Wi-Fi Cards)
@@ -295,7 +305,7 @@ W: https://www.qualcomm.com/
 L: Arduino
 N: Arduino LLC / Arduino SRL
 C: LGPL 2.1 / GPL 2.0
-D: Open-source hardware and microcontroller ecosystem
+D: Micro-controller
 W: https://www.arduino.cc/
 
 N: Acetheking987 / Alfie King
