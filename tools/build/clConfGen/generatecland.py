@@ -6,7 +6,7 @@ head = """CompileFlags:
   Add:
 """
 
-with open("include.ref", "r") as f:
+with open("tools/reflists/include.ref", "r") as f:
     for line in f.readlines():
         if line.startswith("#"):
             continue
