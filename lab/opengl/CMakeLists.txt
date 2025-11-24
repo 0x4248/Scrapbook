@@ -15,6 +15,3 @@ find_package(OpenGL REQUIRED)
 add_executable(OpenGLHelloWorld src/main.cpp)
 
 target_link_libraries(OpenGLHelloWorld PRIVATE glfw OpenGL::GL)
-
-# For macOS you may need:
-# target_link_libraries(OpenGLHelloWorld PRIVATE glfw OpenGL::GL "-framework Cocoa" "-framework IOKit" "-framework CoreVideo")
