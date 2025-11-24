@@ -1,6 +1,6 @@
-                            0x4248 OPEN SOURCE CREDITS
+                                0x4248 CREDITS
 
-Here contains most credits for the libraries, help and support that helped. This
+Here contains most credits for the libraries, help and people that helped. This
 includes 0x4248.dev, 0x4248 Scrapbook, 4248 Music, and 4248 Media. It is
 formatted similar to the linux CREDITS file.
 
@@ -297,5 +297,16 @@ N: Arduino LLC / Arduino SRL
 C: LGPL 2.1 / GPL 2.0
 D: Open-source hardware and microcontroller ecosystem
 W: https://www.arduino.cc/
+
+N: Acetheking987 / Alfie King
+D: Various patches
+W: https://alfieking.dev/
+A: United Kingdom
+
+N: Sparky
+D: Music / Production & Mixing
+D: Various patches
+W: https://eevee658.vercel.app/
+A: United Kingdom
 
 ------------------------------------[ END ]------------------------------------
