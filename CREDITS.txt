@@ -1,0 +1,211 @@
+                            0x4248 OPEN SOURCE CREDITS
+
+Here contains most credits for the libraries, help and support that helped. This
+includes 0x4248.dev, 0x4248 Scrapbook, 4248 Music, and 4248 Media. It is 
+formatted similar to the linux CREDITS file. 
+
+The fields are Library name (L), Name of person or company who made the library 
+(N), Copyright or license (C), Website (W), Description (D), Address (A)
+
+-----------------------------------[ BEGIN ]-----------------------------------
+
+L: SDL
+N: Sam Lantinga
+C: Zlib license
+D: Simple DirectMedia Layer
+W: https://www.libsdl.org/
+
+L: OpenGL
+N: Khronos Group
+W: https://opengl.org/
+W: https://www.khronos.org/opengl/
+
+L: Collada
+N: Khronos Group
+W: https://www.khronos.org/collada/
+
+L: gLTF
+N: Khronos Group
+W: https://www.khronos.org/gltf/
+
+L: Vulkan
+N: Khronos Group
+W: https://www.vulkan.org/
+
+L: Linux Kernel
+N: Linus Torvalds
+C: GPL 2.0 Only
+W: https://kernel.org/
+A: Helsinki
+A: Finland
+
+L: Git
+N: Linus Torvalds
+C: GPL 2.0 Only
+W: https://git-scm.com/
+A: Helsinki
+A: Finland
+
+L: Blender
+N: Blender Foundation
+C: GNU GPL 2.0 or later
+W: https://www.blender.org/
+D: 3D Creation Suite
+
+L: OpenEXR
+N: Industrial Light & Magic
+C: BSD License
+W: https://www.openexr.com/
+D: High Dynamic Range Image File Format
+
+L: Python
+N: Python Software Foundation
+C: Python Software Foundation License
+W: https://www.python.org/
+D: Programming Language
+
+L: GNU GCC
+N: Free Software Foundation
+C: GNU GPL 3.0 or later
+W: https://gcc.gnu.org/
+D: GNU Compiler Collection
+
+L: ImGui
+N: Omar Cornut
+C: MIT License
+W: https://github.com/ocornut/imgui
+D: Immediate Mode GUI library
+
+L: FFmpeg
+N: FFmpeg Team
+C: LGPL 2.1 or GPL 2.0
+W: https://ffmpeg.org/
+D: Multimedia framework
+
+L: Dear ImGui
+N: Omar Cornut
+C: MIT License
+W: https://github.com/ocornut/imgui
+D: Immediate Mode GUI library
+
+L: Lua
+N: Lua.org, PUC-Rio
+C: MIT License
+W: https://www.lua.org/
+D: Lightweight scripting language
+
+L: Ruby
+N: Yukihiro Matsumoto
+C: Ruby License / BSD
+W: https://www.ruby-lang.org/
+D: Programming language
+
+L: CMake
+N: Kitware
+C: BSD 3-Clause License
+W: https://cmake.org/
+D: Build system generator
+
+L: GNU Make
+N: Free Software Foundation
+C: GNU GPL 3.0 or later
+W: https://www.gnu.org/software/make/
+D: Build automation tool
+
+L: GNU C Library (glibc)
+N: Free Software Foundation
+C: GNU LGPL 2.1 or later
+W: https://www.gnu.org/software/libc/
+D: GNU C standard library
+
+L: Clang
+N: LLVM Project
+C: Apache License 2.0 with LLVM exception
+W: https://clang.llvm.org/
+D: C language family compiler frontend
+
+L: GNU Coreutils
+N: Free Software Foundation
+C: GNU GPL 3.0 or later
+W: https://www.gnu.org/software/coreutils/
+D: GNU core command-line utilities
+
+L: BusyBox
+N: BusyBox Team
+C: GPL 2.0 Only
+W: https://busybox.net/
+D: Single-binary collection of Unix utilities
+
+L: GFortran
+N: Free Software Foundation
+C: GNU GPL 3.0 or later
+W: https://gcc.gnu.org/fortran/
+D: GNU Fortran compiler
+
+L: FLAC
+N: Xiph.Org Foundation
+C: BSD License
+W: https://xiph.org/flac/
+D: Free lossless audio codec
+
+L: zlib
+N: Jean-loup Gailly, Mark Adler
+C: zlib License
+W: https://zlib.net/
+D: Compression library
+
+L: libarchive
+N: Tim Kientzle
+C: BSD License
+W: https://www.libarchive.org/
+D: Multi-format archive and compression library
+
+L: NASM
+N: NASM Development Team
+C: BSD License
+W: https://www.nasm.us/
+D: Netwide Assembler
+
+L: OpenSSL
+N: OpenSSL Software Foundation
+C: Apache License 2.0
+W: https://www.openssl.org/
+D: Cryptography and SSL/TLS toolkit
+
+L: Autoconf
+N: Free Software Foundation
+C: GNU GPL 3.0 or later
+W: https://www.gnu.org/software/autoconf/
+D: Automatic configure script builder
+
+L: Boost
+N: Boost Community
+C: Boost Software License 1.0
+W: https://www.boost.org/
+D: C++ Libraries Collection
+
+L: OpenH264
+N: Cisco Systems
+C: BSD License
+W: https://www.openh264.org/
+D: H.264 video codec implementation
+
+L: GLFW
+N: GLFW Development Team
+C: zlib License
+W: https://www.glfw.org/
+D: Window and context creation library
+
+L: LWJGL
+N: LWJGL Team
+C: BSD License
+W: https://www.lwjgl.org/
+D: Lightweight Java Game Library
+
+L: Xorg
+N: X.Org Foundation
+C: MIT License
+W: https://www.x.org/
+D: X Window System implementation
+
+------------------------------------[ END ]------------------------------------
