@@ -1,10 +1,10 @@
                             0x4248 OPEN SOURCE CREDITS
 
 Here contains most credits for the libraries, help and support that helped. This
-includes 0x4248.dev, 0x4248 Scrapbook, 4248 Music, and 4248 Media. It is 
-formatted similar to the linux CREDITS file. 
+includes 0x4248.dev, 0x4248 Scrapbook, 4248 Music, and 4248 Media. It is
+formatted similar to the linux CREDITS file.
 
-The fields are Library name (L), Name of person or company who made the library 
+The fields are Library name (L), Name of person or company who made the library
 (N), Copyright or license (C), Website (W), Description (D), Address (A)
 
 -----------------------------------[ BEGIN ]-----------------------------------
@@ -69,6 +69,12 @@ N: Free Software Foundation
 C: GNU GPL 3.0 or later
 W: https://gcc.gnu.org/
 D: GNU Compiler Collection
+
+L: GNU Binutils
+N: Free Software Foundation
+C: GPL 3.0 Only
+D: GNU binary utilities including ld, as, objdump, nm, etc.
+W: https://www.gnu.org/software/binutils/
 
 L: ImGui
 N: Omar Cornut
@@ -207,5 +213,89 @@ N: X.Org Foundation
 C: MIT License
 W: https://www.x.org/
 D: X Window System implementation
+
+L: QEMU
+N: QEMU Project
+C: GPL 2.0 Only
+D: Generic and open source machine emulator and virtualizer
+W: https://www.qemu.org/
+
+L: SeaBIOS
+N: SeaBIOS Project
+C: LGPL 3.0 Only
+D: Open-source implementation of a 16-bit x86 BIOS
+W: https://www.seabios.org/
+
+L: U-Boot
+N: Das U-Boot / DENX Software Engineering
+C: GPL 2.0 Only
+D: Universal bootloader for embedded systems
+W: https://www.denx.de/wiki/U-Boot
+
+L: glslang
+N: Khronos Group
+C: Apache 2.0
+D: Reference GLSL to SPIR-V compiler
+W: https://github.com/KhronosGroup/glslang
+
+L: bzip2
+N: Julian Seward
+C: BSD-like license
+D: High-quality data compressor
+W: https://sourceware.org/bzip2/
+
+L: libcurl
+N: Daniel Stenberg / curl project
+C: MIT License
+D: Multiprotocol file transfer library
+W: https://curl.se/libcurl/
+
+L: OpenJDK
+N: Oracle / OpenJDK Community
+C: GPL 2.0 with Classpath Exception
+D: Open-source Java platform implementation
+W: https://openjdk.org/
+
+L: SQLite
+N: D. Richard Hipp
+C: Public Domain
+D: Embedded SQL database engine
+W: https://sqlite.org/
+
+L: VICE
+N: VICE Team
+C: GPL 2.0 Only
+D: Versatile Commodore Emulator
+W: http://vice-emu.sourceforge.net/
+
+L: ARM Architecture
+N: ARM Ltd.
+C: Various proprietary and open licenses
+D: ARM CPU architecture used in embedded and mobile systems
+W: https://www.arm.com/
+
+L: Raspberry Pi 4 & 5
+N: Raspberry Pi Foundation
+C: Various open-source licenses and proprietary components
+D: Single-board computers used for education and experimentation
+W: https://www.raspberrypi.com/
+
+L: Intel
+N: Intel Corporation
+C: Various licenses
+D: CPU and chipset technologies used in testing and development
+W: https://www.intel.com/
+
+L: Qualcomm Atheros (Wi-Fi Cards)
+N: Qualcomm Incorporated
+C: Various licenses
+D: Wireless networking chipsets used for system testing
+W: https://www.qualcomm.com/
+
+L: Arduino
+N: Arduino LLC / Arduino SRL
+C: LGPL 2.1 / GPL 2.0
+D: Open-source hardware and microcontroller ecosystem
+W: https://www.arduino.cc/
 
 ------------------------------------[ END ]------------------------------------
