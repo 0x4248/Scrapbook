@@ -4,6 +4,8 @@ Here contains most credits for the libraries, help and people that helped. This
 includes 0x4248.dev, 0x4248 Scrapbook, 4248 Music, and 4248 Media. It is
 formatted similar to the linux CREDITS file.
 
+This file is in two main sections: Companies & Groups, and then People
+
 The fields are Library name (L), Name of person or company who made the library
 (N), Copyright or license (C), Website (W), Description (D), Address (A)
 
@@ -307,6 +309,47 @@ N: Arduino LLC / Arduino SRL
 C: LGPL 2.1 / GPL 2.0
 D: Micro-controller
 W: https://www.arduino.cc/
+
+L: Firefox
+N: Mozilla Foundation
+C: MPL 2.0
+W: https://www.mozilla.org/firefox/
+D: Web browser
+
+L: HTTP
+N: CERN
+D: HyperText Transfer Protocol, web standard
+C: Various permissive licenses / public domain origins
+W: https://home.cern/
+
+L: Zed
+N: Zed Industries
+C: Various open-source licenses (including MIT/Apache)
+W: https://zed.dev/
+D: Code editor
+
+L: Arch Linux
+N: Arch Linux Team
+C: GPL and other free software licenses
+W: https://archlinux.org/
+D: Linux distribution
+
+L: Debian
+C: GPL and other free software licenses
+W: https://www.debian.org/
+D: Linux distribution
+
+L: MS-DOS
+N: Microsoft
+C: Proprietary
+W: https://www.microsoft.com/
+
+L: Floppy Disk
+N: IBM
+W: https://www.ibm.com/
+D: 8-inch floppy disk
+
+-----------------------------------[ PEOPLE ]-----------------------------------
 
 N: Acetheking987 / Alfie King
 D: Various patches
