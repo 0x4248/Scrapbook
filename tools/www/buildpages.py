@@ -260,6 +260,7 @@ def make_directory_index(dir_path, rel_path):
 
 def run_prebuild_commands():
     print("Running prebuild commands...")
+    os.system("git clone https://github.com/0x4248/JunkDrawer ext/JunkDrawer")
     os.system("git submodule init")
     os.system("git submodule update --recursive --remote")
     print("Prebuild complete.\n")
