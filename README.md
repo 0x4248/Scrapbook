@@ -1,21 +1,33 @@
 # Scrapbook
 
-Welcome to my scrapbook, this is my collection of experiments, code, fragments, scripts and some other little projects. Here you can find me tinkering around with some random hardware and software. For other files like binaries and files that don't fit here check the [JunkDrawer](https://github.com/0x4248/JunkDrawer).
+This repository is a collection of small systems experiments, one-off tools, hardware tests, and other work that doesn’t justify a standalone project. The layout is intentionally simple: each directory contains an isolated piece of work with its own notes and build files. Nothing here is polished; most of it exists to answer a question, verify a behavior, or document a quirk.
+
+For projects that don’t fit cleanly into a tree (binaries, raw dumps, etc.), see the repository JunkDrawer.
 
 ![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=0x4248&langs_count=50&exclude_repo=linux,busybox,0x4248.github.io,notebook&layout=compact&theme=dark)
 
-*That count is there since gh wont show more than 5 languages on the stats*
+*GitHub statistics are constrained; the language count is expanded here for reference.*
 
-## Repo structure
+## Repository Layout
+```
+arch/      Architecture-specific code and boot experiments  
+systems/   OS-specific tools and tests  
+usr/       User-space utilities  
+lab/       Scratch work, prototypes, small experiments  
+misc/      One-off fragments, language tests, and assorted files  
+ext/       External libraries and third-party components  
+doc/       Notes, references, and assorted documentation  
+tools/     Build helpers and maintenance utilities  
+```
 
-Each folder contains a different "scrap" with its own `README.md` (sometimes just `README` or with another extension) file and the code itself. Think of it like an image in the **scrapbook** with some postit notes.
+Each subdirectory stands alone. Build methods vary please read the local `README` or `Makefile` where present.
 
-## Explore this using ScrapExplorer
+## ScrapExplorer
 
-Check out [this page](https://0x4248.dev/Scrapbook/)
+A simple browser for navigating this repository’s structure is available [here](https://0x4248.dev/Scrapbook/)
 
 ## License
 
-By default, all code is licensed under the GNU General Public License v3.0. If the folder contains a `LICENSE` file, that license applies to the code in that folder unless otherwise stated. You can also read the license [here](https://0x4248.dev/Legal/gpl-3.0.html)
+Unless stated otherwise, code in this repository is released under the **GNU General Public License v3.0**. If a directory contains a LICENSE file, that license applies to the contents of that directory.
 
-Please see my curated list of [Credits here](CREDITS.txt)
+Additional acknowledgements can be found in `CREDITS.txt`.

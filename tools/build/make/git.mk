@@ -4,8 +4,9 @@
 g-log:
 	$(T)git log
 
-g-ac:
+g-acp:
 	$(T)git add *
 	$(T)git commit --signoff
+	$(T)git push
 
-TARGETS += g-log g-ac
+TARGETS += g-log g-acp
