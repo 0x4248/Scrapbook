@@ -4,3 +4,6 @@
 [submodule "ext/SDL"]
 	path = ext/SDL
 	url = https://github.com/libsdl-org/SDL
+[submodule "ext/kconfiglib"]
+	path = ext/kconfiglib
+	url = https://github.com/ulfalizer/Kconfiglib.git
