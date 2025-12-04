@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: GPL-3.0
 # Scrapbook Makefile System
 #
-# help.mk
+# test.mk
+# Base test file just to test if things are working ok e.g precheck system.
+# This can also be used as a template.
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2025 0x4248 and contributors
@@ -11,22 +13,8 @@
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
 
+test:
+	$(T)$(LOG) -e "TEST\tYUP WORKS"
+	$(T)echo "Yeah works"
 
-HELPLIST := doc/make/README.txt doc/make/blank.msg doc/make/git.txt
-
-ifeq ($(CONFIG_DOCS_MAN_MODE),y)
-	HELP-BEGIN = $(T)$(PANDOC) -s
-	HELP-END = -t man | $(GROFF) -man -Tutf8 | less -R
-else
-	HELP-BEGIN = $(T)cat
-	HELP-END = | less
-endif
-
-help:
-	$(HELP-BEGIN) $(HELPLIST) $(HELP-END)
-	$(T)exit 0
-
-help-targets:
-	$(T)echo $(TARGETS)
-
-TARGETS += help-targets
+TARGETS += test

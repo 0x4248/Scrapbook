@@ -1,8 +1,7 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scrapbook Makefile System
+# V/UX
 #
 # glob.mk
-# Global variables
 #
 # COPYRIGHT NOTICE
 # Copyright (C) 2025 0x4248 and contributors
@@ -12,14 +11,12 @@
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
 
-# Trace mode
-T := @
-LOG := :
-# All targets for phony and help
-TARGETS =
+# Versions
+V-MAJOR=1
+V-MINOR=0
+V-PATCH=6
 
-SHELL ?= /bin/bash
-PYTHON ?= python3
-PIP ?= pip3
-PANDOC ?= pandoc
-GROFF ?= groff
+# This line is system dependant, please change is based on your system. On mine
+# its similar to this.
+LINUX-IMAGE=~/github/Linux/arch/arm64/boot/Image
+#LINUX-IMAGE=arch/arm64/boot/Image
