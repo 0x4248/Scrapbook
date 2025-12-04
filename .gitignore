@@ -24,7 +24,6 @@
 !.junkref
 !.init
 !.project
-!.config
 !.defconfig
 
 # Dirs
@@ -47,6 +46,7 @@ __cmake_systeminformation/
 !*.ref
 !.github/
 !*.yml
+!*.msg
 ##### SORT THIS ####
 
 # TEXT
