@@ -344,6 +344,10 @@ def generate_all_pages():
                 continue
 
             src_path = os.path.join(dirpath, file)
+
+            if file == "index.html":
+                continue
+
             out_rel = os.path.join(rel, file) + ".html"
             make_file_page(src_path, out_rel)
 
