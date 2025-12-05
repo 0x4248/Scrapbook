@@ -3,8 +3,8 @@ project(Pulse)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(server src/server.cpp)
-add_executable(pulsemsg_client src/client.cpp)
+add_executable(server src/server.cpp src/time.cpp)
+add_executable(client src/client.cpp)
 
 # Link pthread for server if needed in future
-target_link_libraries(pulsemsg_server pthread)
+target_link_libraries(server pthread)
