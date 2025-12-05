@@ -349,6 +349,17 @@ N: IBM
 W: https://www.ibm.com/
 D: 8-inch floppy disk
 
+------------------------------------[ DOCS ]------------------------------------
+
+L: DevDocs
+D: API Documentation Browser
+N: Thibaut Courouble
+W: https://devdocs.io
+
+N: Cpp Reference
+D: C And C++ Documentation
+W: https://cppreference.com
+
 -----------------------------------[ PEOPLE ]-----------------------------------
 
 N: Acetheking987 / Alfie King
