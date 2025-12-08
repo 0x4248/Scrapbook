@@ -24,7 +24,6 @@ TEMPLATE = """<!doctype html>
         <title>{title}</title>
         <link rel="stylesheet" href="/Scrapbook/misc/www/css/basic_mono.css"/>
         <link rel="stylesheet" href="/Scrapbook/misc/www/css/ScrapExplorer/main.css"/>
-
         <style>
         .ln {{
             display: inline-block;
@@ -265,11 +264,76 @@ def make_directory_index(dir_path, rel_path):
     write_file(os.path.join(OUT_DIR, rel_path, "index.html"), page)
 
 
+def write_commit_page(commit, outdir):
+    # Commit metadata
+    meta = run_cmd(f"git show -s --format='%H%n%an%n%ae%n%at%n%s' {commit}").split("\n")
+    full_hash, author, author_email, timestamp, subject = meta
+    timestamp = int(timestamp)
+
+    # Diff
+    diff = run_cmd(f"git show --color=never {commit}")
+    diff_html = f"<pre>{html.escape(diff)}</pre>"
+
+    page = TEMPLATE.format(
+        title=f"Commit {full_hash}",
+        breadcrumbs="Commits",
+        stats="",
+        toolbar="",
+        separator='<div class="separator">[COMMIT BEGIN]</div>',
+        endtag="COMMIT END",
+        content=f"""
+{diff_html}
+""",
+    )
+
+    write_file(os.path.join(outdir, f"{commit}.html"), page)
+
+
+def write_commit_index(outdir):
+    commits = run_cmd("git log --format='%H %at %an %s'").splitlines()
+
+    lines = []
+    for entry in commits:
+        h, ts, author, *rest = entry.split()
+        subject = " ".join(rest)
+        when = int(ts)
+        lines.append(
+            f"* {when} <a href='{h}.html'>{html.escape(subject)}</a> - {html.escape(author)}"
+        )
+
+    content = "\n".join(lines)
+
+    page = TEMPLATE.format(
+        title="Commit Log",
+        breadcrumbs="Commits",
+        stats="",
+        toolbar="",
+        separator='<div class="separator">[LOG BEGIN]</div>',
+        endtag="LOG END",
+        content=content,
+    )
+
+    write_file(os.path.join(outdir, "index.html"), page)
+
+
+def generate_lore_like_log():
+    lore_dir = os.path.join(OUT_DIR, "logs", "lore")
+    ensure_dir(lore_dir)
+
+    # Get commit list in reverse chronological
+    commits = run_cmd("git log --format='%H'").splitlines()
+
+    for c in commits:
+        write_commit_page(c, lore_dir)
+
+    write_commit_index(lore_dir)
+
+
 def run_prebuild_commands():
-    print("Running prebuild commands...")
-    os.system("git clone https://github.com/0x4248/JunkDrawer ext/JunkDrawer")
-    os.system("git submodule init")
-    os.system("git submodule update --recursive --remote")
+    # print("Running prebuild commands...")
+    # os.system("git clone https://github.com/0x4248/JunkDrawer ext/JunkDrawer")
+    # os.system("git submodule init")
+    # os.system("git submodule update --recursive --remote")
     print("Prebuild complete.\n")
 
 
@@ -277,6 +341,7 @@ def generate_logs():
     print("Generating logs...")
 
     ensure_dir(LOGS_DIR)
+    generate_lore_like_log()
 
     gitlog = run_cmd("git log --stat --decorate --color=never")
     write_log("gitlog.txt", gitlog)
@@ -342,6 +407,8 @@ def generate_all_pages():
         if rel == ".":
             rel = ""
 
+        if rel.startswith("logs/lore"):
+            continue
         # Directory index
         make_directory_index(dirpath, rel)
 
