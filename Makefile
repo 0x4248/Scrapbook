@@ -18,6 +18,8 @@ all: precheck help
 NOCONFIG_TARGETS := menuconfig defconfig
 
 precheck:
+	$(T)$(LOG) -e "PRECHECK\tGLOBPATH"
+	$(T)pwd > .scrappath
 	$(T)$(LOG) -e "PRECHECK\tCONFIG"
 	@if [ -z "$(filter $(MAKECMDGOALS),$(NOCONFIG_TARGETS))" ]; then \
 		if [ ! -f .config ]; then \
