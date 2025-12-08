@@ -201,6 +201,13 @@ def make_file_page(src_path, out_path_rel):
 
 
 def make_directory_index(dir_path, rel_path):
+    src_index = os.path.join(SRC_DIR, rel_path, "index.html")
+    if os.path.exists(src_index):
+        dst_index = os.path.join(OUT_DIR, rel_path, "index.html")
+        ensure_dir(os.path.dirname(dst_index))
+        shutil.copy2(src_index, dst_index)
+        return
+
     entries = sorted(os.listdir(dir_path))
 
     intro = ""
