@@ -36,6 +36,10 @@ pages/
 __cmake_systeminformation/
 
 
+#### ALWAYS IGNORE ####
+COMMIT_MSG.txt
+COMMIT_MSG.old
+
 ##### SORT THIS ####
 !*.mk
 !*.conf
@@ -81,6 +85,9 @@ __cmake_systeminformation/
 !*.s
 !*.S
 !*.asm
+
+# CMAKE
+!*.cmake
 
 ### SCRIPTS ###
 !*.py
