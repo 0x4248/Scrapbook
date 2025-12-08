@@ -1,29 +1,31 @@
 /*
  * Hello world module
- * 
+ *
  * This is really basic, mainly for a starting point for modules.
- * 
+ *
  * 0x4248
  */
+
 #include <linux/kernel.h>
 #include <linux/module.h>
+#include <linux/kern_levels.h>
+
+#include "lib/log.h"
 
 
-int init_module(void)
+static int demo_init(void)
 {
-    pr_info("Hello world 1.\n");
-    return 0;
+    LOG("base", KERN_INFO, "Hello");
+	return 0;
 }
 
-
-/* Exit function */
-void cleanup_module(void)
+static void demo_exit(void)
 {
-    pr_info("Goodbye world 1.\n");
+    LOG("base", KERN_INFO, "Bye");
 }
 
-module_init(init_module); 
-module_exit(cleanup_module); 
+module_init(demo_init);
+module_exit(demo_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("0x4248");

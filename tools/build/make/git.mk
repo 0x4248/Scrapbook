@@ -22,6 +22,23 @@ g-acp:
 	$(T)git commit --signoff
 	$(T)git push
 
+g-cs:
+	$(T)$(LOG) -e "GIT\t COMMIT (SPECIAL)"
+	$(T)printf "\n\n" > COMMIT_MSG.txt
+
+	$(T)name=$$(git config user.name); \
+	email=$$(git config user.email); \
+	printf "Signed-off-by: %s <%s>" "$$name" "$$email" >> COMMIT_MSG.txt
+
+	$(T)echo "A file named COMMIT_MSG.txt, has been created for you"
+	$(T)echo "Once you are done press enter or crtl c to cancel:"
+	$(T)read
+
+	$(T)git commit -F COMMIT_MSG.txt
+	$(T)mv COMMIT_MSG.txt COMMIT_MSG.old
+
+
+
 g-mod:
 	$(T)git submodule update --recursive --remote
 

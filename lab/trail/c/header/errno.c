@@ -155,7 +155,6 @@
  * Errno maps these values to constants which can make it much easier to write
  */
 
-
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>

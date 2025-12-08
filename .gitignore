@@ -51,6 +51,7 @@ COMMIT_MSG.old
 !.github/
 !*.yml
 !*.msg
+!*.toml
 ##### SORT THIS ####
 
 # TEXT

@@ -24,3 +24,4 @@ include tools/build/make/help.mk
 include tools/build/make/test.mk
 include tools/build/make/misc.mk
 include tools/build/make/scripts.mk
+include tools/build/make/build.mk
