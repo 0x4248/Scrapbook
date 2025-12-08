@@ -290,15 +290,18 @@ def write_commit_page(commit, outdir):
 
 
 def write_commit_index(outdir):
-    commits = run_cmd("git log --format='%H %at %an %s'").splitlines()
+    commits = run_cmd("git log --format='%H%x00%at%x00%an%x00%s'").split("\n")
 
     lines = []
     for entry in commits:
-        h, ts, author, *rest = entry.split()
-        subject = " ".join(rest)
+        if not entry.strip():
+            continue
+
+        h, ts, author, subj = entry.split("\x00", 3)
         when = int(ts)
+
         lines.append(
-            f"* {when} <a href='{h}.html'>{html.escape(subject)}</a> - {html.escape(author)}"
+            f"* {when} <a href='{h}.html'>{html.escape(subj)}</a> - {html.escape(author)}"
         )
 
     content = "\n".join(lines)
@@ -317,7 +320,7 @@ def write_commit_index(outdir):
 
 
 def generate_lore_like_log():
-    lore_dir = os.path.join(OUT_DIR, "logs", "lore")
+    lore_dir = os.path.join(OUT_DIR, "lore")
     ensure_dir(lore_dir)
 
     # Get commit list in reverse chronological
@@ -330,10 +333,10 @@ def generate_lore_like_log():
 
 
 def run_prebuild_commands():
-    # print("Running prebuild commands...")
-    # os.system("git clone https://github.com/0x4248/JunkDrawer ext/JunkDrawer")
-    # os.system("git submodule init")
-    # os.system("git submodule update --recursive --remote")
+    print("Running prebuild commands...")
+    os.system("git clone https://github.com/0x4248/JunkDrawer ext/JunkDrawer")
+    os.system("git submodule init")
+    os.system("git submodule update --recursive --remote")
     print("Prebuild complete.\n")
 
 
@@ -407,7 +410,7 @@ def generate_all_pages():
         if rel == ".":
             rel = ""
 
-        if rel.startswith("logs/lore"):
+        if rel.startswith("lore"):
             continue
         # Directory index
         make_directory_index(dirpath, rel)
