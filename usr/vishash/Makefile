@@ -10,7 +10,7 @@ TARGET = randomart
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(OBJS) -o $(TARGET) $(LDFLAGS)
+	$(CXX) $(OBJS) -o build/$(TARGET) $(LDFLAGS)
 
 build/%.o: src/%.cpp
 	@mkdir -p build
