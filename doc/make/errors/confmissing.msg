@@ -6,7 +6,7 @@ You are missing your .config, which is needed for the makefile system.
 How can I make the config?
 First lets get the submodules using git:
 
-    git submodule update --recursive --remote
+    git submodule update --init --recursive
 
 Then generate the config using our state of the art menuconfig:
 
