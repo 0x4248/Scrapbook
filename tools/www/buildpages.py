@@ -290,7 +290,7 @@ def write_commit_page(commit, outdir):
 
 
 def write_commit_index(outdir):
-    commits = run_cmd("git log --format='%H%x00%at%x00%an%x00%s'").split("\n")
+    commits = run_cmd("git log --after='2025-12-09' --format='%H%x00%at%x00%an%x00%s'").split("\n")
 
     lines = []
     for entry in commits:
