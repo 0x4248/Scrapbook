@@ -12,10 +12,11 @@
 
 import os
 import shutil
-import sys
-import requests
-import zipfile
 import subprocess
+import sys
+import zipfile
+
+import requests
 
 
 def checkDirs():
@@ -23,13 +24,13 @@ def checkDirs():
         os.chdir("..")
         if not os.path.exists("JunkDrawer"):
             raise FileNotFoundError
-        os.chdir("Scrapbook")
+        os.chdir("Nexus")
     except FileNotFoundError:
         print("Missing JunkDrawer!")
         print(
             "Your system should look like\n",
             "JunkDrawer\\\n",
-            "Scrapbook\\\n",
+            "Nexus\\\n",
             "\ttools\\build\\junkref.py\\\n",
         )
         exit(1)
@@ -131,7 +132,7 @@ def main():
         print(f"Usage: {sys.argv[0]} path/to/file/.junkref")
         sys.exit(1)
     junkref_file = sys.argv[1]
-    projDir = os.path.join("Scrapbook/", junkref_file[:-8])
+    projDir = os.path.join("Nexus/", junkref_file[:-8])
     parse(junkref_file, projDir)
 
 

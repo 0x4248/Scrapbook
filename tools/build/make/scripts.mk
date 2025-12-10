@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scrapbook Makefile System
+# Nexus Makefile System
 #
 # scripts.mk
 # This points to all the scripts
@@ -20,8 +20,8 @@ clangd-conf:
 
 ### WWW ###
 
-## SCRAPEXPLORER ##
-build-scapexplorer:
+## Atlas ##
+build-atlas:
 	$(T)$(PYTHON) tools/www/buildpages.py
 
 clean-scapexplorer:

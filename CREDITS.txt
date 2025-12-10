@@ -1,7 +1,7 @@
                                 0x4248 CREDITS
 
 Here contains most credits for the libraries, help and people that helped. This
-includes 0x4248.dev, 0x4248 Scrapbook, 4248 Music, and 4248 Media. It is
+includes 0x4248.dev, 0x4248 Nexus, 4248 Music, and 4248 Media. It is
 formatted similar to the linux CREDITS file.
 
 This file is in two main sections: Companies & Groups, and then People

@@ -22,8 +22,8 @@ TEMPLATE = """<!doctype html>
 <html>
     <head>
         <title>{title}</title>
-        <link rel="stylesheet" href="/Scrapbook/misc/www/css/basic_mono.css"/>
-        <link rel="stylesheet" href="/Scrapbook/misc/www/css/ScrapExplorer/main.css"/>
+        <link rel="stylesheet" href="/Nexus/misc/www/css/basic_mono.css"/>
+        <link rel="stylesheet" href="/Nexus/misc/www/css/Atlas/main.css"/>
         <style>
         .ln {{
             display: inline-block;
@@ -95,7 +95,7 @@ def compute_breadcrumbs(rel_path):
     accum = ""
     for p in parts:
         accum = os.path.join(accum, p)
-        crumbs.append(f'<a href="/Scrapbook/{accum}/index.html">{p}</a>')
+        crumbs.append(f'<a href="/Nexus/{accum}/index.html">{p}</a>')
 
     return " / ".join(crumbs)
 
@@ -124,12 +124,12 @@ def make_file_page(src_path, out_path_rel):
     breadcrumbs = compute_breadcrumbs(rel_path_dir)
     filesize = os.path.getsize(src_path)
 
-    repo = "0x4248/Scrapbook"
+    repo = "0x4248/Nexus"
     repo_path = out_path_rel.replace(".html", "")
     github_url = f"https://github.com/{repo}/blob/main/{repo_path}"
     github_raw = f"https://raw.githubusercontent.com/{repo}/main/{repo_path}"
     github_proxy_raw = f"https://proxy.0x4248.dev/https://raw.githubusercontent.com/{repo}/main/{repo_path}"
-    github_search = f"https://github.com/search?q=repo%3A0x4248%2FScrapbook++path%3A**%2F{filename}&type=code"
+    github_search = f"https://github.com/search?q=repo%3A0x4248%2FNexus++path%3A**%2F{filename}&type=code"
     ext = os.path.splitext(filename)[1].lower()
 
     if ext in [".md", ".markdown", ".html", ".htm"]:
@@ -187,7 +187,7 @@ def make_file_page(src_path, out_path_rel):
         content = numbered
 
     page = TEMPLATE.format(
-        title="ScrapExplorer - " + filename,
+        title="Atlas - " + filename,
         breadcrumbs=breadcrumbs,
         stats=stats,
         toolbar=toolbar,
@@ -252,7 +252,7 @@ def make_directory_index(dir_path, rel_path):
     title_path = "Home" if rel_path == "" else rel_path
 
     page = TEMPLATE.format(
-        title="ScrapExplorer - " + title_path,
+        title="Atlas - " + title_path,
         breadcrumbs=breadcrumbs,
         stats="",
         toolbar="",
@@ -436,7 +436,7 @@ def main():
         shutil.rmtree(OUT_DIR)
     ensure_dir(OUT_DIR)
 
-    shutil.copy("doc/ScrapExplorer/welcome.txt", "pages/README.txt")
+    shutil.copy("doc/Atlas/welcome.txt", "pages/README.txt")
 
     run_prebuild_commands()
     copy_repo_to_pages()

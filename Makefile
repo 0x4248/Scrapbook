@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scrapbook Makefile System
+# Nexus Makefile System
 #
 # Makefile
 # This file seems pretty empty, well thats because it is by design. Check the
@@ -19,7 +19,7 @@ NOCONFIG_TARGETS := menuconfig defconfig
 
 precheck:
 	$(T)$(LOG) -e "PRECHECK\tGLOBPATH"
-	$(T)pwd > .scrappath
+	$(T)pwd > .nexopath
 	$(T)$(LOG) -e "PRECHECK\tCONFIG"
 	@if [ -z "$(filter $(MAKECMDGOALS),$(NOCONFIG_TARGETS))" ]; then \
 		if [ ! -f .config ]; then \

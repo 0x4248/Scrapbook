@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scrapbook Makefile System
+# Nexus Makefile System
 #
 # git.mk
 # GIT based targets

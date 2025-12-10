@@ -1,7 +1,7 @@
 GIT
 ===
 
-The Scrapbook uses git heavily as part of its workflow. Below im going to give a
+The Nexus uses git heavily as part of its workflow. Below im going to give a
 quick overview on how each commit works.
 
 BASE COMMITS

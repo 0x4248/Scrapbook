@@ -1,6 +1,6 @@
 MAKE SYSTEM
 ===========
-Welcome to the ScrapBook Makefile
+Welcome to the Nexus Makefile
 
 The primary makefile in this repository is not to build anything (crazy), tho
 it contains many tools and points to other makefiles to build other things.
@@ -10,7 +10,7 @@ tools.
 
 CONFIGURATION
 ===========
-The scrapbook has a lot of configuration involved, hence why there is a
+The Nexus has a lot of configuration involved, hence why there is a
 menuconfig system thanks to the kconfiglib project. To get started configuring this
 simply run:
 

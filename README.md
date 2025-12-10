@@ -1,8 +1,10 @@
-# Scrapbook
+# Nexus
 
-This repository is a collection of small systems experiments, one-off tools, hardware tests, and other work that doesn’t justify a standalone project. The layout is intentionally simple: each directory contains an isolated piece of work with its own notes and build files. Nothing here is polished; most of it exists to answer a question, verify a behavior, or document a quirk.
+Primary repository containing all my projects, experiments, utilities, prototypes, and systems work — effectively a personal megarepo. This is the canonical source for everything I develop.
 
-For projects that don’t fit cleanly into a tree (binaries, raw dumps, etc.), see the repository JunkDrawer.
+- Each subdirectory is self-contained, with its own build instructions, notes, or Makefiles.
+- Nothing is guaranteed polished; most code exists to verify behavior, prototype ideas, or document quirks.
+- Outputs that do not belong in a source tree (binaries, dumps, generated artifacts) live in the JunkDrawer repository.
 
 
 
@@ -20,9 +22,9 @@ tools/     Build helpers and maintenance utilities
 
 Each subdirectory stands alone. Build methods vary please read the local `README` or `Makefile` where present.
 
-## ScrapExplorer
+## Atlas
 
-A simple browser for navigating this repository’s structure is available [here](https://0x4248.dev/Scrapbook/)
+A simple browser for navigating this repository’s structure is available [here](https://0x4248.dev/nexus/)
 
 ## Languages
 

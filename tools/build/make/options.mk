@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0
-# Scrapbook Makefile System
+# Nexus Makefile System
 #
 # options.mk
 # Kconfig utilities, targets should not be put here

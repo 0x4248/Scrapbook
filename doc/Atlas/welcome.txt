@@ -1,10 +1,10 @@
-<h1>Welcome to ScrapExplorer</h1>
+<h1>Welcome to Atlas</h1>
 
-ScrapExplorer provides a navigable view into the internal workings of this repository a mix of experiments, low-level prototypes, and assorted systems code.
+Atlas provides a navigable view into the internal workings of this repository a mix of experiments, low-level prototypes, and assorted systems code.
 
 Nothing here is arranged for show; directories reflect the actual structure of the work: boot code, small utilities, test rigs, hardware notes, and fragments that existed solely to answer a technical question at the time.
 
-Use the explorer to move through the tree and inspect individual projects. ScrapExplorer will also show you the <i>README</i> files and notes put on each folder. Some folders contain complete tools; others hold only a few lines of code or a build script used once and kept for reference. Treat this space as a working archive rather than a polished product.
+Use the explorer to move through the tree and inspect individual projects. Atlas will also show you the <i>README</i> files and notes put on each folder. Some folders contain complete tools; others hold only a few lines of code or a build script used once and kept for reference. Treat this space as a working archive rather than a polished product.
 
 If you are looking for items that don’t fit neatly into source control such as binary dumps, temporary artifacts, and other debris go to <i>ext/JunkDrawer</i>.
 
