@@ -22,8 +22,8 @@ TEMPLATE = """<!doctype html>
 <html>
     <head>
         <title>{title}</title>
-        <link rel="stylesheet" href="/Nexus/misc/www/css/basic_mono.css"/>
-        <link rel="stylesheet" href="/Nexus/misc/www/css/Atlas/main.css"/>
+        <link rel="stylesheet" href="/nexus/misc/www/css/basic_mono.css"/>
+        <link rel="stylesheet" href="/nexus/misc/www/css/Atlas/main.css"/>
         <style>
         .ln {{
             display: inline-block;
