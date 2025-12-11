@@ -13,11 +13,20 @@
 # This software is free and open source. Licensed under the GNU general
 # public license version 3.0 as published by the Free Software Foundation.
 
+
+
 all: precheck help
 
 NOCONFIG_TARGETS := menuconfig defconfig
 
 precheck:
+	@if [ "$$(uname -s)" = "Darwin" ]; then \
+	    if [ "$(CONFIG_MAKE_IGNORE_WARNING_DARWIN)" != "y" ]; then \
+	        echo "WARNING: You are using Darwin (MacOS) which is not usually supported by Nexus"; \
+	        echo "Set CONFIG_MAKE_IGNORE_WARNING_DARWIN=y to suppress this warning"; \
+	    fi; \
+	fi
+
 	$(T)$(LOG) -e "PRECHECK\tGLOBPATH"
 	$(T)pwd > .nexopath
 	$(T)$(LOG) -e "PRECHECK\tCONFIG"
@@ -27,6 +36,11 @@ precheck:
 			exit 1; \
 		fi; \
 	fi
+
+
+
+
+quickstart:
 
 
 -include tools/build/make/includes.mk
