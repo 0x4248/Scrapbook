@@ -15,4 +15,4 @@ This is so that you can see at a glance what subproject or module was modified.
 A commit can also have a second line that explains the commit better, GitHub
 hides this under the three little dots.
 
-You may also see a signoff, the Makefile workflow does this by defaut.
+You may also see a signoff, the Makefile workflow does this by default.
