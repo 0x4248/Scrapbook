@@ -17,7 +17,7 @@ run_update() {
 
     dialog --infobox "Running system update... please wait." 5 40
     TEMP_OUTPUT=$(mktemp)
-    echo "$PASSWORD" | sudo -S pacman -Syu --noconfirm >"$TEMP_OUTPUT" 2>&1
+    echo "$PASSWORD" | sudo apt upgrade >"$TEMP_OUTPUT" 2>&1
 
     dialog --textbox "$TEMP_OUTPUT" 20 70
     rm -f "$TEMP_OUTPUT"
