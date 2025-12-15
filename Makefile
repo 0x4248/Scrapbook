@@ -20,12 +20,13 @@ all: precheck help
 NOCONFIG_TARGETS := menuconfig defconfig
 
 precheck:
-	@if [ "$$(uname -s)" = "Darwin" ]; then \
-	    if [ "$(CONFIG_MAKE_IGNORE_WARNING_DARWIN)" != "y" ]; then \
-	        echo "WARNING: You are using Darwin (MacOS) which is not usually supported by Nexus"; \
-	        echo "Set CONFIG_MAKE_IGNORE_WARNING_DARWIN=y to suppress this warning"; \
-	    fi; \
-	fi
+	@{ \
+		if [ "$$(uname -s)" = "Darwin" ] && \
+		   [ "$(CONFIG_MAKE_IGNORE_WARNING_DARWIN)" != "y" ]; then \
+			echo "WARNING: You are using Darwin (MacOS) which is not usually supported by Nexus"; \
+			echo "Set CONFIG_MAKE_IGNORE_WARNING_DARWIN=y to suppress this warning"; \
+		fi; \
+	} || true
 
 	$(T)$(LOG) -e "PRECHECK\tGLOBPATH"
 	$(T)pwd > .nexopath
