@@ -38,18 +38,22 @@ precheck:
 		fi; \
 	fi
 
-
-
-
-quickstart:
-
-
 -include tools/build/make/includes.mk
-
-.PHONY: precheck $(TARGETS)
 
 ifneq ($(filter $(MAKECMDGOALS),$(NOCONFIG_TARGETS)),)
   # This is only ran if they wanted to make the config without any config
 else
   $(MAKECMDGOALS): precheck
 endif
+
+include Nbuild
+
+build: $(NBUILD-T)
+	$(T)$(LOG) -e "NBUILD\t COMPLETE"
+
+$(NBUILD-T):
+	$(T)$(LOG) -e "NBUILD\t $(NBUILD-T)"
+	$(MAKE) -C $@
+
+.PHONY: precheck build $(TARGETS) $(NBUILD-T)
+

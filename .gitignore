@@ -25,6 +25,7 @@
 !.init
 !.project
 !.defconfig
+!.vscode/
 
 # Dirs
 build/
