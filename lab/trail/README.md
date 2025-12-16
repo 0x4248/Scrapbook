@@ -1,8 +1,8 @@
-The C/C++ Trail
-===============
+The Language Trail
+===================
 
-What is The C/C++ Trail, well its like a hike trough the entire C and C++ library from
-the beginning.
+What is The Language Trail, well its like a hike trough the entire C and C++ library from
+the beginning and as well as other major languages that I want to try out like PHP and Lua.
 
 *why?*
 

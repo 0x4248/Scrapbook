@@ -102,3 +102,4 @@ COMMIT_MSG.old
 !*.sh
 !*.bash
 !*.fish
+!*.php

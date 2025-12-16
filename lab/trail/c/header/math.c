@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0
- * The C/C++ Trail
+ * The Language Trail
  *
  * math.c
  *
