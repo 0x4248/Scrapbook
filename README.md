@@ -30,7 +30,7 @@ A simple browser for navigating this repository’s structure is available [here
 
 *GitHub statistics are constrained; the language count is expanded here for reference.*
 
-![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=0x4248&langs_count=50&exclude_repo=linux,busybox,0x4248.github.io,notebook&layout=compact&theme=dark)
+![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=0x4248&langs_count=50&exclude_repo=linux,busybox,0x4248.github.io,notebook&layout=compact&theme=transparent)
 
 
 ## License
