@@ -27,7 +27,8 @@
 !.defconfig
 !.vscode/
 
-# Dirs
+
+# DIRS
 build/
 bin/
 appdata/
@@ -36,16 +37,16 @@ __pycache__/
 pages/
 __cmake_systeminformation/
 
+# DIRS KEEP
+!.github/
+
 
 #### ALWAYS IGNORE ####
 COMMIT_MSG.txt
 COMMIT_MSG.old
 
 ##### SORT THIS ####
-!*.ld
-!*.glsl
-!.github/
-!*.yml
+# NONE
 ##### SORT THIS ####
 
 # TEXT
@@ -59,7 +60,8 @@ COMMIT_MSG.old
 !*.conf
 !*.ref
 !*.toml
-
+!*.yml
+!*.ld
 
 ### SOURCE FILLES ###
 # C
@@ -74,6 +76,11 @@ COMMIT_MSG.old
 
 # ARDUINO
 !*.ino
+
+# OPENGL
+!*.glsl
+!*.vert
+!*.frag
 
 # JAVA
 !*.java
