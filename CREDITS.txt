@@ -322,6 +322,12 @@ D: HyperText Transfer Protocol, web standard
 C: Various permissive licenses / public domain origins
 W: https://home.cern/
 
+L: HTML5
+N: WHATWG
+D: HyperText Markup Language, web standard
+C: Various permissive licenses / public domain origins
+W: https://whatwg.org/
+
 L: Zed
 N: Zed Industries
 C: Various open-source licenses (including MIT/Apache)
