@@ -12,6 +12,6 @@ include_directories(${CMAKE_SOURCE_DIR}/../../ext/glfw/include)
 
 find_package(OpenGL REQUIRED)
 
-add_executable(OpenGLHelloWorld src/main.cpp)
+add_executable(OpenGLHelloWorld src/demos/redanim.cpp)
 
 target_link_libraries(OpenGLHelloWorld PRIVATE glfw OpenGL::GL)
