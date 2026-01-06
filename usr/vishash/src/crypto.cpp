@@ -4,7 +4,7 @@
  * crypto.cpp
  *
  * COPYRIGHT NOTICE
- * Copyright (C) 2025 0x4248 and contributors
+ * Copyright (C) 2025-2026 0x4248 and contributors
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the license is not changed.
  *

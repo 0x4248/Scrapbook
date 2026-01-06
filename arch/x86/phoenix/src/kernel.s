@@ -4,7 +4,7 @@
 ; Kernel entry point
 ;
 ; COPYRIGHT NOTICE
-; Copyright (C) 2024 0x4248 and phoenix contributors
+; Copyright (C) 2024-2026 0x4248 and phoenix contributors
 ; Redistribution and use in source and binary forms, with or without
 ; modification, are permitted provided that the license is not changed.
 ;
@@ -64,5 +64,5 @@ main:
 
 
 msg0 db "Phoenix OS, System running!", 0
-msg1 db "Copyright (C) 2024 0x4248 GNU GPL v3", 0
+msg1 db "Copyright (C) 2024-2026 0x4248 GNU GPL v3", 0
 msg2 db "System running, press r to reboot", 0

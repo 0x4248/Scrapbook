@@ -6,7 +6,7 @@
 ;
 ; This version seems to have the very advanced blue screen colour syscall, fun.
 ;
-; Copyright (C) 2024 0x4248
+; Copyright (C) 2024-2026 0x4248
 
 
 [ORG 0x7c00]

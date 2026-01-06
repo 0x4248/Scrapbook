@@ -5,7 +5,7 @@
 ; Screen colouring
 ;
 ; COPYRIGHT NOTICE
-; Copyright (C) 2024 0x4248 and phoenix contributors
+; Copyright (C) 2024-2026 0x4248 and phoenix contributors
 ; Redistribution and use in source and binary forms, with or without
 ; modification, are permitted provided that the license is not changed.
 ;
