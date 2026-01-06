@@ -1,3 +1,12 @@
+<style>
+@font-face {
+    font-family: 'FullPack2025';
+    src: url('/ttf/FP.ttf');
+}  
+</style>
+
+<p style="text-align:center;font-size:50px;font-family:&quot;FullPack2025&quot;;color: white;margin-bottom:-50px;">ATLAS</p>
+
 <h1>Welcome to Atlas</h1>
 
 Atlas provides a navigable view into the internal workings of this repository a mix of experiments, low-level prototypes, and assorted systems code.
