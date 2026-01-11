@@ -127,6 +127,21 @@ input[type=submit]:focus , input[type=submit]:hover {
 SCRIPT = """
 <script>
 document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        document.activeElement.blur();
+    }
+
+    if (event.key === 'F1') {
+        const firstInput = document.querySelector('input, textarea');
+        if (firstInput) {
+            const commandName = firstInput.value.trim();
+            if (commandName) {
+                window.location.href = '/man/' + encodeURIComponent(commandName);
+            }
+        }
+    }
+
+
     if (event.key === 'F2') {
         window.location.href = '/command';
     }
@@ -134,10 +149,10 @@ document.addEventListener('keydown', function(event) {
     if (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'textarea') {
         return;
     }
-    if (event.key === 'F4' || event.key === ',' || event.key === 'Escape') {
+    if (event.key === 'F4' || event.key === ',' || event.key === 'Backspace') {
         window.history.back();
     }
-    if (event.key === 'F1') {
+    if (event.key === '.') {
         const firstInput = document.querySelector('input, textarea');
         if (firstInput) {
             firstInput.focus();
@@ -161,7 +176,10 @@ def layout(request: Request, title: str, buttons: list[tuple[str, str]], header_
     header = header_html if header_html is not None else f"<div class='header'><strong>ORION SYSTEM:</strong> {title}<br>{nav}</div>"
     return f"""
     <html>
-      <head>{STYLE}</head>
+      <head>
+      <title>ORION SYSTEM: {title}</title>
+      {STYLE}
+      </head>
       <body>
         {header}
         <hr/>

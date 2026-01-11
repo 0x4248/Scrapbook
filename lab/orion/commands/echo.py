@@ -2,6 +2,7 @@ from fastapi import Request
 from core.registry import registry
 from core.commands import Command
 from core import page
+import manpages.echo
 
 def echo(request: Request, text: str = ""):
     if not text:
