@@ -66,12 +66,61 @@ label {
   text-transform: uppercase;
 }
 
+
+.gray-span {
+  color: gray;
+  font-style: italic;
+}
+
+.log-debug {
+  color: gray;
+}
+
+.log-info {
+  color: #4da6ff;
+}
+.log-warning {
+  color: black;
+  background-color: yellow;
+}
+.log-error {
+  color: white;
+  background-color: red;
+}
+
+.log-error-flash {
+  background-color: red;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  animation: flash-text 1s infinite;
+}
+
+.flash {
+  animation: flash-text 1s infinite;
+}
+
+@keyframes flash-text {
+  0% { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 .error {
   background-color: red;
   color: white;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   animation: pulse_error 1s;
+}
+
+.error-flash {
+  background-color: red;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  animation: flash-text 1s infinite;
 }
 
 @keyframes pulse_error {

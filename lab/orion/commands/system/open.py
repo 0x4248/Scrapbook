@@ -23,9 +23,27 @@ def open_page(request: Request, name: str = ""):
 
     return RedirectResponse(f"/command/{name}", status_code=303)
 
+def goto(request: Request, name: str = ""):
+    return RedirectResponse(f"/{name}", status_code=303)
+
 registry.register(Command(
     name="open",
     handler=open_page,
     summary="Open a UI page",
+    mode="cli",
+))
+
+
+registry.register(Command(
+    name="goto",
+    handler=goto,
+    summary="Jumps to a url",
+    mode="cli",
+))
+
+registry.register(Command(
+    name="g",
+    handler=goto,
+    summary="Jumps to a url",
     mode="cli",
 ))
