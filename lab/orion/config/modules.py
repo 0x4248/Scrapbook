@@ -1,6 +1,9 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # Orion System
 #
+# Modules list configuration file
+# This file tells orion which modules to load at startup.
+#
 # Copyright (C) 2026 0x4248
 # Copyright (C) 2026 4248 Systems
 #
@@ -12,22 +15,10 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-from core import manual
 
-manual.manual_registry.register(
-    name="echo",
-    text="""
-DESCRIPTION:
-    Echo back the provided text.
-
-USAGE:
-    echo <text>
-
-EXAMPLE:
-    $ echo Hello, World!
-    Hello, World!
-
-ALIASES:
-    none
-"""
-)
+MODULES = [
+    "commands.system.open",
+    "commands.system.heartbeats",
+    "commands.testing.demo",
+    "commands.echo"
+]

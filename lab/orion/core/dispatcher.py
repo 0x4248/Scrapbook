@@ -12,22 +12,10 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-from core import manual
+import inspect
 
-manual.manual_registry.register(
-    name="echo",
-    text="""
-DESCRIPTION:
-    Echo back the provided text.
-
-USAGE:
-    echo <text>
-
-EXAMPLE:
-    $ echo Hello, World!
-    Hello, World!
-
-ALIASES:
-    none
-"""
-)
+async def dispatch(handler, *args, **kwargs):
+    result = handler(*args, **kwargs)
+    if inspect.isawaitable(result):
+        return await result
+    return result

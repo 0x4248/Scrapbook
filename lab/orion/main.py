@@ -1,3 +1,17 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Orion System
+#
+# Copyright (C) 2026 0x4248
+# Copyright (C) 2026 4248 Systems
+#
+# Orion is free software; you may redistribute it and/or modify it
+# under the terms of the GNU General Public License version 3 only,
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse
 
@@ -5,10 +19,16 @@ from core.logbridge import logBridge
 from pages import command, about, console
 from core import auth, console
 from core import page as p
+from commands.system import manual
+from config.modules import MODULES
 
-import commands.system.open
-import commands.system.manual as manual
-import commands.echo
+def load_commands():
+    for module_path in MODULES:
+        console.logger.info(m=f"Loading module: {module_path}")
+        __import__(module_path)
+
+load_commands()
+
 import logging
 
 handler = logBridge(console.logger)
