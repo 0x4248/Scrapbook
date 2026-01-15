@@ -25,7 +25,7 @@ router = APIRouter()
 @router.get("/console")
 async def console_page(request: Request):
     body = "<h2>System Logs</h2>\n"
-    body += "<span class='gray-span'>Press F4 to exit</span>\n"
+    body += "<span class='grey-text'>Press F4 to exit</span>\n"
     body += "<pre>\n"
     for log_id in sorted(console.log_db.logs.keys(), reverse=True):
         entry = console.log_db.logs[log_id]

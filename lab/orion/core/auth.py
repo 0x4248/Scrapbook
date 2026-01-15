@@ -15,7 +15,7 @@
 from fastapi import APIRouter, Request, Form
 from fastapi.responses import RedirectResponse
 from core import page as p
-
+from core import console
 router = APIRouter()
 
 # ---- users DB (placeholder) ----
@@ -23,15 +23,22 @@ router = APIRouter()
 users = {
     "admin": {
         "password": "admin",
-        "roles": ["admin", "user"],
+        "roles": ["admin", "user", "db"],
         "email": "admin@orion",
         "telephone": "101",
+    },
+    "user": {
+        "password": "user",
+        "roles": ["user"],
+        "email": "user@orion",
+        "telephone": "111",
     }
 }
 
 # ---- middleware ----
 
 async def auth_middleware(request: Request, call_next):
+    console.logger.info(m=f"{request.method} {request.url.path} from {request.client.host}. USER: {request.cookies.get('user', 'Anonymous')}", caller="HTTP_Middleware")
     if request.url.path.startswith("/login"):
         return await call_next(request)
 

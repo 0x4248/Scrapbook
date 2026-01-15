@@ -81,7 +81,7 @@ label {
 }
 
 
-.gray-span {
+.grey-text {
   color: gray;
   font-style: italic;
 }

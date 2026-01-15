@@ -12,6 +12,7 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+import difflib
 import shlex
 from fastapi import APIRouter, Request, Form
 from fastapi.responses import RedirectResponse
@@ -41,6 +42,11 @@ async def command_page(request: Request):
 """
     )
 
+def find_similar_commands(name: str, cutoff: float = 0.6):
+    commands = [c.name for c in registry.all() if c.supports_cli()]
+    return difflib.get_close_matches(name, commands, n=3, cutoff=cutoff)
+
+
 @router.post("/command")
 async def command_submit(request: Request, command: str = Form(...)):
     try:
@@ -55,10 +61,19 @@ async def command_submit(request: Request, command: str = Form(...)):
     cmd = registry.get(name)
 
     if not cmd or not cmd.supports_cli():
-        return p.message(request, "UNKNOWN", error=f"'{name}' is not a valid CLI command")
+        did_you_mean = find_similar_commands(name)
+        if did_you_mean:
+            hint = ", ".join(f"<a href='/command'>{cmd}</a>" for cmd in did_you_mean)
+        else:
+            hint = "no similar commands found"
+        return p.message(request, "UNKNOWN", error=f"'{name}' is not a valid CLI command <br>Did you mean? {hint}")
 
     if cmd.supports_ui() and not args and cmd.form_fields:
         return RedirectResponse(f"/command/{name}", 303)
+
+    if cmd.parse_mode == "raw":
+        raw_args = command[len(name):].lstrip()
+        args = [raw_args]
 
     return await dispatcher.dispatch(cmd.handler, request, *args)
 

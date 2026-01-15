@@ -60,7 +60,7 @@ registry.register(Command(
     mode="both",
     form_fields=[
         {"name": "value", "type": "text"},
-        {"name": "extra", "type": "text"}
+        {"name": "extra", "type": "time"}
     ],
 ))
 

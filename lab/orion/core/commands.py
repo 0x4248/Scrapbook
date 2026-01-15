@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from typing import Callable, Dict, List, Optional, Any, Literal
 
 Mode = Literal["cli", "ui", "both"]
-
+ParseModes = Literal["shlex", "raw"]
 @dataclass
 class Command:
     name: str
@@ -24,6 +24,8 @@ class Command:
     summary: str = ""
     mode: Mode = "cli"
     form_fields: List[Dict[str, Any]] = field(default_factory=list)
+    parse_mode: ParseModes = "shlex"
+    custom_attributes: Dict[str, Any] = field(default_factory=dict)
 
     def supports_cli(self) -> bool:
         return self.mode in ("cli", "both")

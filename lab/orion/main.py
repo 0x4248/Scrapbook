@@ -24,7 +24,7 @@ from config.modules import MODULES
 
 def load_commands():
     for module_path in MODULES:
-        console.logger.info(m=f"Loading module: {module_path}")
+        console.logger.info(m=f"Loading module: {module_path}", caller="ModuleLoader")
         __import__(module_path)
 
 load_commands()
@@ -37,7 +37,7 @@ handler.setFormatter(logging.Formatter("%(message)s"))
 root = logging.getLogger()
 root.handlers.clear()
 root.addHandler(handler)
-root.setLevel(logging.DEBUG)
+root.setLevel(logging.WARNING)
 
 for name in (
     "uvicorn",
@@ -70,6 +70,15 @@ async def not_found(request: Request, exc):
         request,
         "404 NOT FOUND",
         "<pre class='error'>404 NOT FOUND</pre>"
+        "<a href='javascript:history.back()'>[ BACK ]</a>",
+    )
+
+@app.exception_handler(500)
+async def server_error(request: Request, exc):
+    return p.static(
+        request,
+        "500 SERVER ERROR",
+        "<pre class='error'>500 SERVER ERROR</pre><pre class='grey-text'>{}</pre>".format(str(exc)) +
         "<a href='javascript:history.back()'>[ BACK ]</a>",
     )
 

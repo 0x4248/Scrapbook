@@ -1,9 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # Orion System
 #
-# Modules list configuration file
-# This file tells orion which modules to load at startup.
-#
 # Copyright (C) 2026 0x4248
 # Copyright (C) 2026 4248 Systems
 #
@@ -15,11 +12,18 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+from fastapi import Request
+from core.registry import registry
+from core.commands import Command
+from core import page
 
-MODULES = [
-    "commands.system.open",
-    "commands.system.heartbeats",
-    "commands.testing.demo",
-    "commands.echo",
-    "commands.system.sqldb"
-]
+def hello_cli(request: Request, *args):
+    name = args[0] if args else "world"
+    return page.message(request, "HELLO (CLI)", f"hello {name}")
+
+registry.register(Command(
+    name="hello.world",
+    handler=hello_cli,
+    summary="CLI-only hello",
+    mode="cli",
+))
