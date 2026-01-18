@@ -3,5 +3,6 @@
     "catppuccin-icons.associations.files": {
         "Nbuild": "makefile",
         "Kconfig": "config"
-    }
+    },
+    "makefile.configureOnOpen": true
 }
