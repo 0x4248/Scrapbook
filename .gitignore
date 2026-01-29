@@ -18,7 +18,7 @@
 
 *.*
 
-# Lets not ignore these important dotfiles
+# DOTFILES
 !.gitignore
 !.gitmodules
 !.junkref
@@ -26,9 +26,9 @@
 !.project
 !.defconfig
 !.vscode/
+!.github/
 
-
-# DIRS
+# DIRS TO IGNORE
 build/
 bin/
 appdata/
@@ -36,10 +36,6 @@ AppData/
 __pycache__/
 pages/
 __cmake_systeminformation/
-
-# DIRS KEEP
-!.github/
-
 
 #### ALWAYS IGNORE ####
 COMMIT_MSG.txt
